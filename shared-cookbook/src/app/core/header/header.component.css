@@ -1,0 +1,84 @@
+.header {
+  max-width: 1560px;
+  max-height: 150px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.header-left-panel {
+  width: 700px;
+  max-height: 150px;
+  float: left;
+}
+.logo-wrap {
+  width: 500px;
+  float: left;
+  background: #f3f3ee;
+  overflow: hidden;
+}
+.logo {
+  width: 500px;
+  float: left;
+  margin-left: 20px;
+  margin-top: 40px;
+}
+.logo h2 {
+  font-family: "Ropa Sans", sans-serif;
+  font-size: 22px;
+  color: #cf9359;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding-bottom: 20px;
+}
+.logo h1 {
+  color: #50453b;
+  font-size: 42px;
+  padding-bottom: 30px;
+}
+.header-right-panel {
+  width: 400px;
+  float: right;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.header-right-panel-top {
+  width: 380px;
+  float: right;
+}
+.header-right-panel p {
+  color: #cf9359;
+  float: right;
+  font-size: 14px;
+  text-align: right;
+  font-weight: normal;
+}
+
+.menu {
+  width: 400px;
+  float: left;
+  margin-top: 20px;
+}
+.menu ul li {
+  float: left;
+  padding-bottom: 20px;
+  width: 120px;
+}
+.menu ul li a {
+  display: block;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  background: #414141;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+}
+.menu ul li a:hover {
+  background: #cf9359;
+  color: #282828;
+}
+.menu ul li a.active {
+  background: #cf9359;
+  color: #282828;
+}
