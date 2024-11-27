@@ -1,0 +1,72 @@
+.cardWrapper {
+  width: 450px; /* Ширина на картата */
+  padding: 20px; /* Вътрешен падинг */
+  padding-bottom: 10px; /* Падинг отдолу */
+  border: 1px solid #cf9359; /* Бежова рамка */
+  border-radius: 8px; /* Скругление на ъглите */
+  background-color: #f3f3ee; /* Фонов цвят */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Лека сянка */
+  text-align: center; /* Центрира текста */
+  box-sizing: border-box; /* Включва падинга и бордера в общата ширина */
+  margin-top: 40px; /* Външен падинг отгоре - увеличен */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* transition: transform 0.3s, box-shadow 0.3s; */
+}
+
+.card {
+  /* width: auto; */
+  height: 300px; /* Височина на изображението */
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.cardWrapper:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Изрязване на изображението */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.title {
+  margin-top: 15px;
+  font-size: 1.5em;
+}
+
+.button-link {
+  margin-top: 20px;
+  background: url("/icon-more.png") no-repeat;
+  width: 16px;
+  height: 16px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
+a {
+  font-family: "Ropa Sans", sans-serif;
+  text-transform: uppercase;
+}
+
+.description {
+  margin-top: 10px;
+}
+.border {
+  border-bottom: 1px solid #dadacb;
+  margin: 10px 0;
+}
