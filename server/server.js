@@ -1,9 +1,15 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined'
-    ? (module.exports = factory(require('http'), require('fs'), require('crypto')))
+    ? (module.exports = factory(
+        require('http'),
+        require('fs'),
+        require('crypto')
+      ))
     : typeof define === 'function' && define.amd
     ? define(['http', 'fs', 'crypto'], factory)
-    : ((global = typeof globalThis !== 'undefined' ? globalThis : global || self), (global.Server = factory(global.http, global.fs, global.crypto)));
+    : ((global =
+        typeof globalThis !== 'undefined' ? globalThis : global || self),
+      (global.Server = factory(global.http, global.fs, global.crypto)));
 })(this, function (http, fs, crypto) {
   'use strict';
 
@@ -100,7 +106,8 @@
           'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
           'Access-Control-Allow-Credentials': false,
           'Access-Control-Max-Age': '86400',
-          'Access-Control-Allow-Headers': 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept, X-Authorization, X-Admin',
+          'Access-Control-Allow-Headers':
+            'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept, X-Authorization, X-Admin',
         });
       } else {
         try {
@@ -121,7 +128,11 @@
       }
 
       res.writeHead(status, headers);
-      if (context != undefined && context.util != undefined && context.util.throttle) {
+      if (
+        context != undefined &&
+        context.util != undefined &&
+        context.util.throttle
+      ) {
         await new Promise((r) => setTimeout(r, 500 + Math.random() * 500));
       }
       res.end(result);
@@ -135,16 +146,29 @@
       async function handle(context) {
         const { serviceName, tokens, query, body } = await parseRequest(req);
         if (serviceName == 'admin') {
-          return ({ headers, result } = services['admin'](method, tokens, query, body));
+          return ({ headers, result } = services['admin'](
+            method,
+            tokens,
+            query,
+            body
+          ));
         } else if (serviceName == 'favicon.ico') {
-          return ({ headers, result } = services['favicon'](method, tokens, query, body));
+          return ({ headers, result } = services['favicon'](
+            method,
+            tokens,
+            query,
+            body
+          ));
         }
 
         const service = services[serviceName];
 
         if (service === undefined) {
           status = 400;
-          result = composeErrorObject(400, `Service "${serviceName}" is not supported`);
+          result = composeErrorObject(
+            400,
+            `Service "${serviceName}" is not supported`
+          );
           console.error('Missing service ' + serviceName);
         } else {
           result = await service(context, { method, tokens, query, body });
@@ -178,7 +202,10 @@
       .split('&')
       .filter((s) => s != '')
       .map((x) => x.split('='))
-      .reduce((p, [k, v]) => Object.assign(p, { [k]: decodeURIComponent(v) }), {});
+      .reduce(
+        (p, [k, v]) => Object.assign(p, { [k]: decodeURIComponent(v) }),
+        {}
+      );
     const body = await parseBody(req);
 
     return {
@@ -218,8 +245,16 @@
      */
     async parseRequest(context, request) {
       for (let { method, name, handler } of this._actions) {
-        if (method === request.method && matchAndAssignParams(context, request.tokens[0], name)) {
-          return await handler(context, request.tokens.slice(1), request.query, request.body);
+        if (
+          method === request.method &&
+          matchAndAssignParams(context, request.tokens[0], name)
+        ) {
+          return await handler(
+            context,
+            request.tokens.slice(1),
+            request.query,
+            request.body
+          );
         }
       }
     }
@@ -296,11 +331,14 @@
   var Service_1 = Service;
 
   function uuid() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-      let r = (Math.random() * 16) | 0,
-        v = c == 'x' ? r : (r & 0x3) | 0x8;
-      return v.toString(16);
-    });
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(
+      /[xy]/g,
+      function (c) {
+        let r = (Math.random() * 16) | 0,
+          v = c == 'x' ? r : (r & 0x3) | 0x8;
+        return v.toString(16);
+      }
+    );
   }
 
   var util = {
@@ -311,7 +349,9 @@
 
   const data = fs__default['default'].existsSync('./data')
     ? fs__default['default'].readdirSync('./data').reduce((p, c) => {
-        const content = JSON.parse(fs__default['default'].readFileSync('./data/' + c));
+        const content = JSON.parse(
+          fs__default['default'].readFileSync('./data/' + c)
+        );
         const collection = c.slice(0, -5);
         p[collection] = {};
         for (let endpoint in content) {
@@ -359,7 +399,10 @@
           responseData = responseData[token];
         }
       }
-      if (responseData !== undefined && responseData[tokens.slice(-1)] !== undefined) {
+      if (
+        responseData !== undefined &&
+        responseData[tokens.slice(-1)] !== undefined
+      ) {
         responseData[tokens.slice(-1)] = body;
       }
       return responseData[tokens.slice(-1)];
@@ -445,7 +488,8 @@
 
   var users = userService.parseRequest;
 
-  const { NotFoundError: NotFoundError$1, RequestError: RequestError$1 } = errors;
+  const { NotFoundError: NotFoundError$1, RequestError: RequestError$1 } =
+    errors;
 
   var crud = {
     get,
@@ -473,10 +517,15 @@
       '>=': (prop, value) => (record) => record[prop] >= JSON.parse(value),
       '>': (prop, value) => (record) => record[prop] > JSON.parse(value),
       '=': (prop, value) => (record) => record[prop] == JSON.parse(value),
-      ' like ': (prop, value) => (record) => record[prop].toLowerCase().includes(JSON.parse(value).toLowerCase()),
-      ' in ': (prop, value) => (record) => JSON.parse(`[${/\((.+?)\)/.exec(value)[1]}]`).includes(record[prop]),
+      ' like ': (prop, value) => (record) =>
+        record[prop].toLowerCase().includes(JSON.parse(value).toLowerCase()),
+      ' in ': (prop, value) => (record) =>
+        JSON.parse(`[${/\((.+?)\)/.exec(value)[1]}]`).includes(record[prop]),
     };
-    const pattern = new RegExp(`^(.+?)(${Object.keys(operators).join('|')})(.+?)$`, 'i');
+    const pattern = new RegExp(
+      `^(.+?)(${Object.keys(operators).join('|')})(.+?)$`,
+      'i'
+    );
 
     try {
       let clauses = [query.trim()];
@@ -515,9 +564,14 @@
 
     try {
       if (query.where) {
-        responseData = context.storage.get(context.params.collection).filter(parseWhere(query.where));
+        responseData = context.storage
+          .get(context.params.collection)
+          .filter(parseWhere(query.where));
       } else if (context.params.collection) {
-        responseData = context.storage.get(context.params.collection, tokens[0]);
+        responseData = context.storage.get(
+          context.params.collection,
+          tokens[0]
+        );
       } else {
         // Get list of collections
         return context.storage.get();
@@ -570,7 +624,9 @@
 
       if (query.select) {
         const props = query.select.split(',').filter((p) => p != '');
-        responseData = Array.isArray(responseData) ? responseData.map(transform) : transform(responseData);
+        responseData = Array.isArray(responseData)
+          ? responseData.map(transform)
+          : transform(responseData);
 
         function transform(r) {
           const result = {};
@@ -584,9 +640,14 @@
         props.map((prop) => {
           const [propName, relationTokens] = prop.split('=');
           const [idSource, collection] = relationTokens.split(':');
-          console.log(`Loading related records from "${collection}" into "${propName}", joined on "_id"="${idSource}"`);
-          const storageSource = collection == 'users' ? context.protectedStorage : context.storage;
-          responseData = Array.isArray(responseData) ? responseData.map(transform) : transform(responseData);
+          console.log(
+            `Loading related records from "${collection}" into "${propName}", joined on "_id"="${idSource}"`
+          );
+          const storageSource =
+            collection == 'users' ? context.protectedStorage : context.storage;
+          responseData = Array.isArray(responseData)
+            ? responseData.map(transform)
+            : transform(responseData);
 
           function transform(r) {
             const seekId = r[idSource];
@@ -652,7 +713,11 @@
     context.canAccess(existing, body);
 
     try {
-      responseData = context.storage.set(context.params.collection, tokens[0], body);
+      responseData = context.storage.set(
+        context.params.collection,
+        tokens[0],
+        body
+      );
     } catch (err) {
       throw new RequestError$1();
     }
@@ -680,7 +745,11 @@
     context.canAccess(existing, body);
 
     try {
-      responseData = context.storage.merge(context.params.collection, tokens[0], body);
+      responseData = context.storage.merge(
+        context.params.collection,
+        tokens[0],
+        body
+      );
     } catch (err) {
       throw new RequestError$1();
     }
@@ -706,7 +775,10 @@
     context.canAccess(existing);
 
     try {
-      responseData = context.storage.delete(context.params.collection, tokens[0]);
+      responseData = context.storage.delete(
+        context.params.collection,
+        tokens[0]
+      );
     } catch (err) {
       throw new RequestError$1();
     }
@@ -751,7 +823,10 @@
   const mode = process.argv[2] == '-dev' ? 'dev' : 'prod';
 
   const files = {
-    index: mode == 'prod' ? require$$0 : fs__default['default'].readFileSync('./client/index.html', 'utf-8'),
+    index:
+      mode == 'prod'
+        ? require$$0
+        : fs__default['default'].readFileSync('./client/index.html', 'utf-8'),
   };
 
   var admin = (method, tokens, query, body) => {
@@ -764,7 +839,9 @@
     if (resource && resource.split('.').pop() == 'js') {
       headers['Content-Type'] = 'application/javascript';
 
-      files[resource] = files[resource] || fs__default['default'].readFileSync('./client/' + resource, 'utf-8');
+      files[resource] =
+        files[resource] ||
+        fs__default['default'].readFileSync('./client/' + resource, 'utf-8');
       result = files[resource];
     } else {
       result = files.index;
@@ -979,8 +1056,14 @@
           if (query.hasOwnProperty(prop)) {
             const targetValue = query[prop];
             // Perform lowercase search, if value is string
-            if (typeof targetValue === 'string' && typeof entry[prop] === 'string') {
-              if (targetValue.toLocaleLowerCase() !== entry[prop].toLocaleLowerCase()) {
+            if (
+              typeof targetValue === 'string' &&
+              typeof entry[prop] === 'string'
+            ) {
+              if (
+                targetValue.toLocaleLowerCase() !==
+                entry[prop].toLocaleLowerCase()
+              ) {
                 match = false;
                 break;
               }
@@ -1034,7 +1117,10 @@
     if (Array.isArray(value)) {
       return value.map(deepCopy);
     } else if (typeof value == 'object') {
-      return [...Object.entries(value)].reduce((p, [k, v]) => Object.assign(p, { [k]: deepCopy(v) }), {});
+      return [...Object.entries(value)].reduce(
+        (p, [k, v]) => Object.assign(p, { [k]: deepCopy(v) }),
+        {}
+      );
     } else {
       return value;
     }
@@ -1042,7 +1128,11 @@
 
   var storage = initPlugin;
 
-  const { ConflictError: ConflictError$1, CredentialError: CredentialError$1, RequestError: RequestError$2 } = errors;
+  const {
+    ConflictError: ConflictError$1,
+    CredentialError: CredentialError$1,
+    RequestError: RequestError$2,
+  } = errors;
 
   function initPlugin$1(settings) {
     const identity = settings.identity;
@@ -1059,7 +1149,10 @@
         let user;
         const session = findSessionByToken(userToken);
         if (session !== undefined) {
-          const userData = context.protectedStorage.get('users', session.userId);
+          const userData = context.protectedStorage.get(
+            'users',
+            session.userId
+          );
           if (userData !== undefined) {
             console.log('Authorized as ' + userData[identity]);
             user = userData;
@@ -1080,8 +1173,14 @@
           body.password.length == 0
         ) {
           throw new RequestError$2('Missing fields');
-        } else if (context.protectedStorage.query('users', { [identity]: body[identity] }).length !== 0) {
-          throw new ConflictError$1(`A user with the same ${identity} already exists`);
+        } else if (
+          context.protectedStorage.query('users', {
+            [identity]: body[identity],
+          }).length !== 0
+        ) {
+          throw new ConflictError$1(
+            `A user with the same ${identity} already exists`
+          );
         } else {
           const newUser = Object.assign({}, body, {
             [identity]: body[identity],
@@ -1098,7 +1197,9 @@
       }
 
       function login(body) {
-        const targetUser = context.protectedStorage.query('users', { [identity]: body[identity] });
+        const targetUser = context.protectedStorage.query('users', {
+          [identity]: body[identity],
+        });
         if (targetUser.length == 1) {
           if (hash(body.password) === targetUser[0].hashedPassword) {
             const result = targetUser[0];
@@ -1130,12 +1231,18 @@
       function saveSession(userId) {
         let session = context.protectedStorage.add('sessions', { userId });
         const accessToken = hash(session._id);
-        session = context.protectedStorage.set('sessions', session._id, Object.assign({ accessToken }, session));
+        session = context.protectedStorage.set(
+          'sessions',
+          session._id,
+          Object.assign({ accessToken }, session)
+        );
         return session;
       }
 
       function findSessionByToken(userToken) {
-        return context.protectedStorage.query('sessions', { accessToken: userToken })[0];
+        return context.protectedStorage.query('sessions', {
+          accessToken: userToken,
+        })[0];
       }
 
       function findSessionByUserId(userId) {
@@ -1215,7 +1322,11 @@
       function canAccess(data, newData) {
         const user = context.user;
         const action = actions[request.method];
-        let { rule, propRules } = getRule(action, context.params.collection, data);
+        let { rule, propRules } = getRule(
+          action,
+          context.params.collection,
+          data
+        );
 
         if (Array.isArray(rule)) {
           rule = checkRoles(rule, data);
@@ -1271,14 +1382,20 @@
         // Prop rules
         const allPropRules = collectionRules['*'];
         if (allPropRules !== undefined) {
-          propRules = ruleOrDefault(propRules, getPropRule(allPropRules, action));
+          propRules = ruleOrDefault(
+            propRules,
+            getPropRule(allPropRules, action)
+          );
         }
 
         // Rules by record id
         const recordRules = collectionRules[data._id];
         if (recordRules !== undefined) {
           currentRule = ruleOrDefault(currentRule, recordRules[action]);
-          propRules = ruleOrDefault(propRules, getPropRule(recordRules, action));
+          propRules = ruleOrDefault(
+            propRules,
+            getPropRule(recordRules, action)
+          );
         }
       }
 
@@ -1310,22 +1427,26 @@
       '78d8bbbb-31fa-4208-bfd2-5360a62c0d02': {
         email: 'assia@abv.bg',
         username: 'Assia Ilieva',
-        hashedPassword: '83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1',
+        hashedPassword:
+          '83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1',
       },
       '35c62d76-8152-4626-8712-eeb96381bea8': {
         email: 'peter@abv.bg',
         username: 'Peter',
-        hashedPassword: '83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1',
+        hashedPassword:
+          '83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1',
       },
       '847ec027-f659-4086-8032-5173e2f9c93a': {
         email: 'george@abv.bg',
         username: 'George',
-        hashedPassword: '83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1',
+        hashedPassword:
+          '83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1',
       },
       '60f0cf0b-34b0-4abd-9769-8c42f830dffc': {
         email: 'admin@abv.bg',
         username: 'Admin',
-        hashedPassword: 'fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302',
+        hashedPassword:
+          'fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302',
       },
     },
     sessions: {},
@@ -1337,7 +1458,8 @@
         recipeName: 'Crème Brûlée',
         recipeType: 'Dessert',
         preparationTime: '01:00',
-        imageURL: 'https://brunchandbatter.com/wp-content/uploads/2022/06/Yogurt-Brulee-FI.jpg',
+        imageURL:
+          'https://brunchandbatter.com/wp-content/uploads/2022/06/Yogurt-Brulee-FI.jpg',
         description:
           'Crème brûlée is a classic French dessert consisting of a rich, creamy custard base topped with a crisp layer of caramelized sugar. It’s typically flavored with vanilla and served chilled, with the sugar topping being caramelized just before serving to create a delightful contrast in texture',
         ingredients:
@@ -1352,7 +1474,8 @@
         recipeName: 'Zucchini Fritters',
         recipeType: 'Appetizer',
         preparationTime: '01:00',
-        imageURL: 'https://www.healthygffamily.com/wp-content/uploads/2019/07/8D52E1C3-D91E-47E0-8FE7-A582A57F4D52-scaled.jpg',
+        imageURL:
+          'https://www.healthygffamily.com/wp-content/uploads/2019/07/8D52E1C3-D91E-47E0-8FE7-A582A57F4D52-scaled.jpg',
         description:
           'Zucchini fritters are crispy, golden-brown patties made from grated zucchini mixed with flour, eggs, cheese, and herbs. They are pan-fried until crunchy on the outside and tender on the inside and often served with a cooling dip like yogurt or sour cream',
         ingredients:
@@ -1367,7 +1490,8 @@
         recipeName: 'Apple Pie',
         recipeType: 'Dessert',
         preparationTime: '02:30',
-        imageURL: 'https://jessicainthekitchen.com/wp-content/uploads/2021/09/Vegan-Apple-Pie-14-500x375.jpg',
+        imageURL:
+          'https://jessicainthekitchen.com/wp-content/uploads/2021/09/Vegan-Apple-Pie-14-500x375.jpg',
         description:
           "Apple pie is a classic dessert featuring a buttery, flaky crust filled with tender, spiced apples. It's typically baked until the crust is golden and the filling is bubbling, creating a warm and comforting treat often enjoyed with a scoop of vanilla ice cream.",
         ingredients:
@@ -1414,7 +1538,8 @@
         recipeName: 'Spaghetty Carbonara',
         recipeType: 'Main Course',
         preparationTime: '00:45',
-        imageURL: 'https://anitalianinmykitchen.com/wp-content/uploads/2021/03/carbonara-photo-.jpg',
+        imageURL:
+          'https://anitalianinmykitchen.com/wp-content/uploads/2021/03/carbonara-photo-.jpg',
         description:
           'Spaghetti carbonara is a classic Italian pasta dish with a creamy sauce of eggs, cheese, pancetta or bacon, and black pepper. The rich sauce coats the pasta, creating a flavorful and satisfying meal',
         ingredients:
@@ -1429,7 +1554,8 @@
         recipeName: 'Bruschetta',
         recipeType: 'Appetizer',
         preparationTime: '00:30',
-        imageURL: 'https://www.howtocook.recipes/wp-content/uploads/2021/09/Bruschetta-recipe-500x500.jpg',
+        imageURL:
+          'https://www.howtocook.recipes/wp-content/uploads/2021/09/Bruschetta-recipe-500x500.jpg',
         description:
           "A classic Italian appetizer featuring toasted bread topped with a mixture of diced tomatoes, garlic, basil, olive oil, and balsamic vinegar. It's fresh, flavorful, and easy to prepare.",
         ingredients:
@@ -1444,7 +1570,8 @@
         recipeName: 'Pepper Steak',
         recipeType: 'Main Course',
         preparationTime: '00:45',
-        imageURL: 'https://noobcook.com/wp-content/uploads/2012/02/blackpeppersteak.jpg',
+        imageURL:
+          'https://noobcook.com/wp-content/uploads/2012/02/blackpeppersteak.jpg',
         description:
           'Pepper steak is a flavorful dish featuring beef steaks seasoned with a mix of crushed black, green, and white peppercorns, then seared to perfection. The steaks are served with a rich sauce made from sautéed onions, garlic, white wine, beef broth, and cream',
         ingredients:
@@ -1459,10 +1586,12 @@
         recipeName: 'Tiramisu',
         recipeType: 'Dessert',
         preparationTime: '00:30',
-        imageURL: 'https://bakewithzoha.com/wp-content/uploads/2023/12/hot-chocolate-tiramisu-featured.jpg',
+        imageURL:
+          'https://bakewithzoha.com/wp-content/uploads/2023/12/hot-chocolate-tiramisu-featured.jpg',
         description:
           'Rich Italian dessert made of layers of coffee-soaked ladyfingers, mascarpone cheese, and cocoa powder, creating a creamy and indulgent treat with a perfect balance of sweetness and coffee flavor',
-        ingredients: '1 packet ladyfingers, 500g mascarpone, 3 eggs, 3 table spoons sugar, 500ml strong coffee, 50ml marsala',
+        ingredients:
+          '1 packet ladyfingers, 500g mascarpone, 3 eggs, 3 table spoons sugar, 500ml strong coffee, 50ml marsala',
         instructions:
           'Brew and cool the coffee, then mix in the marsala. Separate the eggs and beat the yolks with sugar until creamy; fold in mascarpone until smooth. Whip the egg whites until stiff and gently fold into the mascarpone mixture. Dip ladyfingers briefly in the coffee mixture, then layer them in a dish. Spread half of the mascarpone mixture over the ladyfingers, then repeat layers. Chill for at least 4 hours, and dust with cocoa powder before serving.',
         _createdOn: 1722357112637,
@@ -1668,7 +1797,8 @@
         _ownerId: '847ec027-f659-4086-8032-5173e2f9c93a',
         name: 'Minions',
         logoUrl: '/assets/hydrant.png',
-        description: 'Friendly neighbourhood jelly beans, helping evil-doers succeed.',
+        description:
+          'Friendly neighbourhood jelly beans, helping evil-doers succeed.',
         _createdOn: 1615737688036,
         _id: '733fa9a1-26b6-490d-b299-21f120b2f53a',
       },
@@ -1727,7 +1857,8 @@
     },
     members: {
       '.update': "isOwner(user, get('teams', data.teamId))",
-      '.delete': "isOwner(user, get('teams', data.teamId)) || isOwner(user, data)",
+      '.delete':
+        "isOwner(user, get('teams', data.teamId)) || isOwner(user, data)",
       '*': {
         teamId: {
           '.update': 'newData.teamId = data.teamId',
@@ -1745,13 +1876,22 @@
     rules: rules$1,
   };
 
-  const plugins = [storage(settings), auth(settings), util$2(), rules(settings)];
+  const plugins = [
+    storage(settings),
+    auth(settings),
+    util$2(),
+    rules(settings),
+  ];
 
-  const server = http__default['default'].createServer(requestHandler(plugins, services));
+  const server = http__default['default'].createServer(
+    requestHandler(plugins, services)
+  );
 
   const port = 3030;
   server.listen(port);
-  console.log(`Server started on port ${port}. You can make requests to http://localhost:${port}/`);
+  console.log(
+    `Server started on port ${port}. You can make requests to http://localhost:${port}/`
+  );
   console.log(`Admin panel located at http://localhost:${port}/admin`);
 
   var softuniPracticeServer = {};
