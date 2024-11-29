@@ -1,3 +1,29 @@
 <div>
-  <h1>Catalog</h1>
+  @if(isFetching){
+  <app-loader />
+  }@else {
+  <div>
+    @for (recipe of recipes; track recipe._id) {
+    <div class="cardWrapper">
+      <div class="card">
+        <img [src]="recipe.imageURL" [alt]="recipe.recipeName" class="image" />
+      </div>
+      <div class="title">
+        <h1 class="border-bottom">{{ recipe.recipeName }}</h1>
+        <h5>{{ recipe.recipeType }}</h5>
+        <div class="border"></div>
+        <div class="content">
+          <p>
+            {{ recipe.description }}
+            <br />
+          </p>
+          <div class="button-link">
+            <a href="">details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+  }
 </div>
