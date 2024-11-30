@@ -1,9 +1,13 @@
-<div>
-  @if(isFetching){
+<div class="panel-wrapper">
+  @if(isFetching() && !error()){
   <app-loader />
-  }@else {
-  <div>
-    @for (recipe of recipes; track recipe._id) {
+  } @if(error()){
+  <p>{{ error() }}</p>
+  } @if (recipes().length === 0) {
+  <p class="fallback-text">Unfortunately, no recipes could be found.</p>
+  } @if(recipes()) {
+  <div class="container">
+    @for (recipe of recipes(); track recipe._id) {
     <div class="cardWrapper">
       <div class="card">
         <img [src]="recipe.imageURL" [alt]="recipe.recipeName" class="image" />
