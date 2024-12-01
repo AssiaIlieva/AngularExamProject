@@ -1,19 +1,18 @@
 <div class="panel-wrapper">
   @if(isFetching() && !error()){
   <app-loader />
-  } @if(error()){
-  <p>{{ error() }}</p>
+
   } @if (recipes().length === 0) {
   <p class="fallback-text">Unfortunately, no recipes could be found.</p>
   } @if(recipes()) {
-  <div class="container">
+  <ul class="container">
     @for (recipe of recipes(); track recipe._id) {
-    <div class="cardWrapper">
+    <li class="cardWrapper">
       <div class="card">
         <img [src]="recipe.imageURL" [alt]="recipe.recipeName" class="image" />
       </div>
       <div class="title">
-        <h1 class="border-bottom">{{ recipe.recipeName }}</h1>
+        <h1 class="">{{ recipe.recipeName }}</h1>
         <h5>{{ recipe.recipeType }}</h5>
         <div class="border"></div>
         <div class="content">
@@ -26,8 +25,8 @@
           </div>
         </div>
       </div>
-    </div>
+    </li>
     }
-  </div>
+  </ul>
   }
 </div>

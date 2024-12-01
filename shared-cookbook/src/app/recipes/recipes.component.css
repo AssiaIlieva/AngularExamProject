@@ -1,5 +1,6 @@
 .cardWrapper {
-  width: 450px; /* Ширина на картата */
+  width: 300px; /* Ширина на картата */
+
   padding: 20px; /* Вътрешен падинг */
   padding-bottom: 10px; /* Падинг отдолу */
   border: 1px solid #cf9359; /* Бежова рамка */
@@ -14,11 +15,14 @@
 }
 .card {
   width: auto;
-  height: 320px;
+  height: 200px;
   overflow: hidden;
   position: relative;
   border-radius: 8px;
   display: flex;
+}
+h1 {
+  font-size: 1.2rem;
 }
 
 .card:hover {
@@ -46,7 +50,7 @@
 
 .title {
   margin-top: 15px;
-  font-size: 1.5em;
+  flex: 0 1 auto;
 }
 
 .button-link {
@@ -135,4 +139,10 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+}
+.content {
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
