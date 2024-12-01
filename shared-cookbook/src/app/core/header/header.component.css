@@ -1,5 +1,10 @@
+header {
+  display: flex;
+  align-content: space-around;
+  background: url("/pattern-1.jpg");
+}
 .header {
-  max-width: 1560px;
+  max-width: 1600px;
   max-height: 200px;
   margin: 0 auto;
   overflow: hidden;
@@ -35,7 +40,7 @@
   padding-bottom: 30px;
 }
 .header-right-panel {
-  width: 400px;
+  width: 500px;
   float: right;
   overflow: hidden;
   margin-top: 10px;
@@ -53,7 +58,7 @@
 }
 
 .menu {
-  width: 400px;
+  width: 500px;
   float: left;
   margin-top: 20px;
 }
@@ -61,6 +66,7 @@
   float: left;
   padding-bottom: 20px;
   width: 120px;
+  padding-left: 15px;
 }
 .menu ul li a {
   display: block;
