@@ -8,8 +8,21 @@ GLOBALS CLASSES
   padding: 0;
   font-family: "Ropa Sans", sans-serif;
 }
+html,
 body {
-  background: url("/pattern-1.jpg");
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+}
+body {
+  background: url("/pattern-2.jpg");
+  max-width: 100%;
+}
+
+.content {
+  flex: 1;
 }
 
 p {
@@ -44,11 +57,11 @@ h1 {
   text-transform: uppercase;
   font-weight: normal;
 }
-
+/* 
 /*-------------------------------------------------
 CSS TWEAKS
 -------------------------------------------------*/
-.clearing {
+/* .clearing {
   clear: both;
 }
 .fltLeft {
@@ -95,7 +108,7 @@ CSS TWEAKS
 }
 .wid960 {
   width: 960px !important;
-}
+} */
 
 /*-------------------------------------------------
 GENERAL CLASSES
@@ -150,93 +163,6 @@ GENERAL CLASSES
 }
 
 /*-------------------------------------------------
-HEADER CLASSES
--------------------------------------------------*/
-.header {
-  width: 1560px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-.header-left-panel {
-  width: 700px;
-  float: left;
-}
-.logo-wrap {
-  width: 500px;
-  float: left;
-  background: #f3f3ee;
-  overflow: hidden;
-}
-.logo {
-  width: 500px;
-  float: left;
-  margin-left: 20px;
-  margin-top: 114px;
-}
-.logo h2 {
-  font-family: "Ropa Sans", sans-serif;
-  font-size: 22px;
-  color: #cf9359;
-  text-transform: uppercase;
-  font-weight: normal;
-  padding-bottom: 20px;
-}
-.logo h1 {
-  color: #50453b;
-  font-size: 42px;
-  padding-bottom: 30px;
-}
-.header-right-panel {
-  width: 600px;
-  float: right;
-  overflow: hidden;
-  margin-top: 30px;
-}
-.header-right-panel-top {
-  width: 280px;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-}
-.header-right-panel p {
-  color: #cf9359;
-  float: right;
-  font-size: 20px;
-  text-align: left;
-  font-weight: normal;
-}
-.menu {
-  width: 600px;
-  float: left;
-  margin-top: 40px;
-}
-.menu ul li {
-  float: left;
-  padding-bottom: 20px;
-  width: 120px;
-}
-.menu ul li a {
-  display: block;
-  width: 120px;
-  height: 40px;
-  line-height: 40px;
-  background: #414141;
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 14px;
-  color: #ffffff;
-  text-align: center;
-  text-transform: uppercase;
-}
-.menu ul li a:hover {
-  background: #cf9359;
-  color: #282828;
-}
-.menu ul li a.active {
-  background: #cf9359;
-  color: #282828;
-}
-
-/*-------------------------------------------------
 PANEL CLASSES
 -------------------------------------------------*/
 .panel-wrap {
@@ -250,9 +176,6 @@ PANEL CLASSES
   max-width: 1560px;
   margin: 0 auto;
   padding-bottom: 60px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 20px;
   box-sizing: border-box;
 }
@@ -562,218 +485,4 @@ SIDEBAR CLASSS
 .midpanel .img {
   float: left;
   width: 80px;
-}
-
-/*-------------------------------------------------
-CONTACT FORM CLASSS
--------------------------------------------------*/
-
-.contact-form {
-  padding: 30px;
-  float: left;
-  width: 550px;
-  overflow: hidden;
-  border-bottom: 1px solid #dadacb;
-}
-.contact-form label {
-  display: block;
-  padding: 10px 0 10px 0;
-}
-.contact-form label span {
-  display: block;
-  color: #939191;
-  font-size: 14px;
-  float: left;
-  width: 80px;
-  text-align: left;
-  padding: 5px 20px 0 0;
-}
-.contact-form .input_text {
-  padding: 10px 10px;
-  width: 420px;
-  background: #e5e2d3;
-  border: none;
-  color: #939191;
-}
-.contact-form .message {
-  padding: 10px 10px;
-  width: 420px;
-  background: #e5e2d3;
-  border: none;
-  overflow: hidden;
-  height: 150px;
-  color: #939191;
-  font-size: 14px;
-}
-.contact-form .button {
-  padding: 8px;
-  background: #cf9359;
-  color: #f7f7f7;
-  text-transform: uppercase;
-  font-family: "Ropa Sans", sans-serif;
-  border: 0px solid;
-  margin-left: 100px;
-  margin-top: 20px;
-}
-
-.address {
-  padding: 30px;
-  float: left;
-  width: 520px;
-}
-.address .panel {
-  border-bottom: none;
-  color: #9b9e9a;
-  background: none;
-  float: left;
-  margin-bottom: 30px;
-  padding: 0px;
-  width: 260px;
-}
-.address .panel .title h1 {
-  color: #282623;
-  padding-bottom: 10px;
-}
-.address .panel .content p {
-  border-bottom: none;
-  overflow: hidden;
-  padding-bottom: 0px;
-}
-.address .panel .content p span {
-  color: #9b9e9a;
-}
-.address .panel .content p a {
-  color: #cf9359;
-  text-decoration: none;
-}
-.address .panel .content p a:hover {
-  color: #282623;
-}
-
-/*-------------------------------------------------
-MODAL STYLES
--------------------------------------------------*/
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-.modal-content {
-  background: #ffffff;
-  border-radius: 8px;
-  padding: 20px;
-  width: 80%;
-  max-width: 500px;
-  position: relative;
-}
-.modal-header {
-  border-bottom: 1px solid #dadacb;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-.modal-title {
-  font-size: 18px;
-  color: #282623;
-  font-weight: bold;
-}
-.modal-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  font-size: 18px;
-  color: #cf9359;
-}
-.modal-body {
-  font-size: 14px;
-  color: #978e86;
-}
-.modal-footer {
-  border-top: 1px solid #dadacb;
-  padding-top: 10px;
-  margin-top: 20px;
-  text-align: right;
-}
-.modal-footer .button {
-  background: #cf9359;
-  color: #ffffff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.modal-footer .button:hover {
-  background: #a87240;
-}
-.modal-show {
-  display: flex;
-}
-
-.modal-button {
-  font-size: 14px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  color: #ffffff;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-.confirm-button {
-  background-color: #cf9359;
-}
-
-.confirm-button:hover {
-  background-color: #a87240;
-}
-
-.cancel-button {
-  background-color: #d4c6b2;
-  color: #282623;
-}
-
-.cancel-button:hover {
-  background-color: #d3b48a;
-}
-
-/* src/components/NotFound.css */
-.not-found {
-  text-align: center;
-  padding: 20px;
-}
-
-.not-found img {
-  max-width: 100%;
-  height: auto;
-}
-
-.not-found h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  color: #a87240;
-}
-
-.not-found p {
-  margin-bottom: 40px;
-  font-size: 15px;
-}
-
-.not-found a {
-  text-decoration: none;
-  color: #a87240;
-  font-weight: normal;
-  font-size: 20px;
-  text-decoration: underline;
-}
-
-.not-found a:hover {
-  text-decoration: underline;
 }

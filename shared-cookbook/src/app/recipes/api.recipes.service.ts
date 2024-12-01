@@ -10,7 +10,7 @@ import { ErrorService } from '../shared/error.service';
 })
 export class ApiRecipesService {
   baseUrl: string = 'http://localhost:3030/data';
-  recipesUrl: string = `${this.baseUrl}/cars`;
+  recipesUrl: string = `${this.baseUrl}/recipes`;
   last3QuaryUrl: string = '?sortBy=_createdOn%20desc&offset=0&pageSize=3';
 
   private errorService = inject(ErrorService);
