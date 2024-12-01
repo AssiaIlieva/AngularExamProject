@@ -1461,7 +1461,7 @@
         imageURL:
           'https://brunchandbatter.com/wp-content/uploads/2022/06/Yogurt-Brulee-FI.jpg',
         description:
-          'Crème brûlée is a classic French dessert consisting of a rich, creamy custard base topped with a crisp layer of caramelized sugar. It’s typically flavored with vanilla and served chilled, with the sugar topping being caramelized just before serving to create a delightful contrast in texture',
+          'Crème brûlée is a classic French dessert consisting of a rich, creamy custard base topped with a crisp layer of caramelized sugar.',
         ingredients:
           '500ml heavy cream, 1 vanilla bean or 1 tablespoon vanilla extract, 5 large egg yolks, 100g granulated sugar, 2 tablespoons brown sugar (for caramelizing)',
         instructions:
@@ -1477,7 +1477,7 @@
         imageURL:
           'https://www.healthygffamily.com/wp-content/uploads/2019/07/8D52E1C3-D91E-47E0-8FE7-A582A57F4D52-scaled.jpg',
         description:
-          'Zucchini fritters are crispy, golden-brown patties made from grated zucchini mixed with flour, eggs, cheese, and herbs. They are pan-fried until crunchy on the outside and tender on the inside and often served with a cooling dip like yogurt or sour cream',
+          'Zucchini fritters are crispy, golden-brown patties made from grated zucchini mixed with flour, eggs, cheese, and herbs.',
         ingredients:
           '2 medium zucchinis grated, 1/2 cup all-purpose flour, 1 large egg, 1/2 cup grated cheese (such as Parmesan or cheddar), 2 tablespoons chopped fresh herbs (such as parsley or dill), 2 cloves garlic  minced, Salt to taste, freshly ground black pepper to taste, 2 tablespoons olive oil (for frying)',
         instructions:
@@ -1493,7 +1493,7 @@
         imageURL:
           'https://jessicainthekitchen.com/wp-content/uploads/2021/09/Vegan-Apple-Pie-14-500x375.jpg',
         description:
-          "Apple pie is a classic dessert featuring a buttery, flaky crust filled with tender, spiced apples. It's typically baked until the crust is golden and the filling is bubbling, creating a warm and comforting treat often enjoyed with a scoop of vanilla ice cream.",
+          'Apple pie is a classic dessert featuring a buttery, flaky crust filled with tender, spiced apples.',
         ingredients:
           '2 1/2 cups all-purpose flour, 1 cup unsalted butter (cold and cubed), 1/4 cup granulated sugar, 1/4 teaspoon salt, 6-7 medium apples (such as Granny Smith or Honeycrisp), peeled, cored, and sliced, 3/4 cup granulated sugar, 1/4 cup brown sugar, 1 tablespoon lemon juice, 1 teaspoon ground cinnamon, 1/4 teaspoon ground nutmeg, 1/4 teaspoon ground allspice, 1 tablespoon all-purpose flour or cornstarch (for thickening), 1 egg (for egg wash, optional), 1 tablespoon milk (for egg wash, optional)',
         instructions:
@@ -1509,7 +1509,7 @@
         imageURL:
           'https://www.allrecipes.com/thmb/9d8yV77PRL3wbRwcpAIxtZPdi5Q=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/85389-gourmet-mushroom-risotto-DDMFS-4x3-a8a80a8deb064c6a8f15452b808a0258.jpg',
         description:
-          "Mushroom risotto is a creamy Italian dish made with Arborio rice cooked slowly in a flavorful broth, combined with sautéed porcini mushrooms, onions, and garlic. It's finished with Parmesan cheese and butter for a rich, comforting meal",
+          'Mushroom risotto is a creamy Italian dish made with Arborio rice cooked slowly in a flavorful broth, combined with sautéed porcini mushrooms, onions, and garlic.',
         ingredients:
           '300g Arborio rice, 200g fresh or dried porcini mushrooms, 1 small onion, finely chopped, 2 cloves garlic, minced, 100ml white wine, 1 liter chicken or vegetable broth, 50g grated Parmesan cheese, 2 tablespoons olive oil, 2 tablespoons butter, salt to taste, freshly ground black pepper to taste, fresh parsley, chopped (optional, for garnish)',
         instructions:
@@ -1525,7 +1525,7 @@
         imageURL:
           'https://www.allrecipes.com/thmb/bA6K66Wfj2oyXQtnZob8FP-UFU8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/220854-chef-johns-italian-meatballs-DDMFS-beauty-4x3-BG-31732-f527165240e34fb081a5290e47d580d0.jpg',
         description:
-          "Meatballs in tomato sauce is a comforting dish featuring tender, seasoned ground beef meatballs simmered in a rich, flavorful tomato sauce with herbs. It's typically served with pasta, rice, or crusty bread.",
+          'Meatballs in tomato sauce is a comforting dish featuring tender, seasoned ground beef meatballs simmered in a rich, flavorful tomato sauce with herbs.',
         ingredients:
           '500g ground beef, 1 small onion, finely chopped, 2 cloves garlic minced, 1 egg, 50g breadcrumbs, 2 tablespoons chopped fresh parsley, salt to taste, black pepper to taste, 500ml canned crushed tomatoes, 1 tablespoon tomato paste, 1 teaspoon dried oregano, 1 teaspoon dried basil, 2 tablespoons olive oil',
         instructions:
@@ -1541,7 +1541,7 @@
         imageURL:
           'https://anitalianinmykitchen.com/wp-content/uploads/2021/03/carbonara-photo-.jpg',
         description:
-          'Spaghetti carbonara is a classic Italian pasta dish with a creamy sauce of eggs, cheese, pancetta or bacon, and black pepper. The rich sauce coats the pasta, creating a flavorful and satisfying meal',
+          'Spaghetti carbonara is a classic Italian pasta dish with a creamy sauce of eggs, cheese, pancetta or bacon, and black pepper.',
         ingredients:
           '4 servings spaghetti, 150g pancetta or bacon - diced, 2 large eggs, 50g grated Parmesan cheese, 2 cloves garlic, minced, 2 tablespoons olive oil, salt to taste, freshly ground black pepper to taste',
         instructions:
@@ -1557,7 +1557,7 @@
         imageURL:
           'https://www.howtocook.recipes/wp-content/uploads/2021/09/Bruschetta-recipe-500x500.jpg',
         description:
-          "A classic Italian appetizer featuring toasted bread topped with a mixture of diced tomatoes, garlic, basil, olive oil, and balsamic vinegar. It's fresh, flavorful, and easy to prepare.",
+          'A classic Italian appetizer featuring toasted bread topped with a mixture of diced tomatoes, garlic, basil, olive oil, and balsamic vinegar.',
         ingredients:
           '1 loaf of Italian bread or baguette - sliced, 4 ripe tomatoes - diced, 2 cloves garlic - minced, 2 tablespoons fresh basil - chopped, 3 tablespoons olive oil, 1 tablespoon balsamic vinegar, salt to taste, freshly ground black pepper to taste',
         instructions:
@@ -1573,7 +1573,7 @@
         imageURL:
           'https://noobcook.com/wp-content/uploads/2012/02/blackpeppersteak.jpg',
         description:
-          'Pepper steak is a flavorful dish featuring beef steaks seasoned with a mix of crushed black, green, and white peppercorns, then seared to perfection. The steaks are served with a rich sauce made from sautéed onions, garlic, white wine, beef broth, and cream',
+          'Pepper steak is a flavorful dish featuring beef steaks seasoned with a mix of crushed black, green, and white peppercorns, then seared to perfection.',
         ingredients:
           '4 beef steaks (about 600g), 1 tablespoon black peppercorns - crushed, 1 tablespoon green peppercorns - crushed, 1 tablespoon white peppercorns - crushed, 2 tablespoons butter, 1 tablespoon olive oil, 1 small onion - finely chopped, 2 cloves garlic - finely chopped, 100ml white wine, 200ml beef broth, 100ml heavy cream, salt to taste',
         instructions:
@@ -1589,7 +1589,7 @@
         imageURL:
           'https://bakewithzoha.com/wp-content/uploads/2023/12/hot-chocolate-tiramisu-featured.jpg',
         description:
-          'Rich Italian dessert made of layers of coffee-soaked ladyfingers, mascarpone cheese, and cocoa powder, creating a creamy and indulgent treat with a perfect balance of sweetness and coffee flavor',
+          'Rich Italian dessert made of layers of coffee-soaked ladyfingers, mascarpone cheese, and cocoa powder.',
         ingredients:
           '1 packet ladyfingers, 500g mascarpone, 3 eggs, 3 table spoons sugar, 500ml strong coffee, 50ml marsala',
         instructions:
