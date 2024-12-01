@@ -2,9 +2,10 @@ import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { HeaderComponent } from './core/header/header.component';
-import { RecipesComponent } from './recipes/recipes.component';
+
 import { ErrorService } from './shared/error.service';
 import { ErrorModalComponent } from './shared/modal/error-modal/error-modal.component';
+import { FooterComponent } from './core/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +13,8 @@ import { ErrorModalComponent } from './shared/modal/error-modal/error-modal.comp
   imports: [
     RouterOutlet,
     HeaderComponent,
-    RecipesComponent,
     ErrorModalComponent,
+    FooterComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
