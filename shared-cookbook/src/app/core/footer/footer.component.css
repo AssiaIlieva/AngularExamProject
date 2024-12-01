@@ -1,0 +1,29 @@
+footer {
+  display: flex;
+  position: bottom;
+
+  background: url("/pattern-1.jpg");
+}
+.footer {
+  width: 960px;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
+.footer p {
+  text-align: center;
+  color: #cf9359;
+  margin-bottom: 10px; /* Намалено разстояние между двата параграфа */
+}
+
+.footer a {
+  color: #cf9359; /* Цвета на линка, ако искаш да е различен от текста */
+  text-decoration: none; /* Премахване на подчертаването на линка */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Подчертаване на линка при hover */
+}
