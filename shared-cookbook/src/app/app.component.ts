@@ -1,15 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
 import { HeaderComponent } from './core/header/header.component';
 import { RecipesComponent } from './recipes/recipes.component';
+import { ErrorService } from './shared/error.service';
+import { ErrorModalComponent } from './shared/modal/error-modal/error-modal.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, RecipesComponent],
+  imports: [
+    RouterOutlet,
+    HeaderComponent,
+    RecipesComponent,
+    ErrorModalComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'shared-cookbook';
+  private errorService = inject(ErrorService);
+
+  error = this.errorService.error;
 }

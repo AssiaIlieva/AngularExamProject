@@ -1,16 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Recipe } from './recipe.model';
 import { catchError, throwError } from 'rxjs';
+
+import { Recipe } from './recipe.model';
+import { ErrorService } from '../shared/error.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiRecipesService {
   baseUrl: string = 'http://localhost:3030/data';
-  recipesUrl: string = `${this.baseUrl}/recipes`;
+  recipesUrl: string = `${this.baseUrl}/cars`;
   last3QuaryUrl: string = '?sortBy=_createdOn%20desc&offset=0&pageSize=3';
 
+  private errorService = inject(ErrorService);
   private httpClient = inject(HttpClient);
 
   constructor() {}
@@ -36,7 +39,9 @@ export class ApiRecipesService {
   private fetchRecipes(url: string, errorMessage: string) {
     return this.httpClient.get<Recipe[]>(url).pipe(
       catchError((error) => {
+        this.errorService.showError(errorMessage);
         console.log(error);
+
         return throwError(() => new Error(errorMessage));
       })
     );
