@@ -24,6 +24,11 @@ form {
   box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.5);
 }
 
+.content {
+  flex: 1;
+  height: 68vh;
+}
+
 .control,
 fieldset {
   margin: 0.5rem 0;
@@ -140,4 +145,11 @@ fieldset {
 input.ng-invalid.ng-touched.ng-dirty {
   background-color: #fbdcd6;
   border-color: #f84e2c;
+}
+.register-link {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+.register-link span {
+  padding-right: 15px;
 }

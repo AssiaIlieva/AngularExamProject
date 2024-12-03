@@ -1,35 +1,37 @@
-<form>
-  <h2>Welcome on board!</h2>
-  <p>We just need a little bit of data from you to get you started 🚀</p>
-
-  <div class="control">
-    <label for="email">Email</label>
-    <input id="email" type="email" name="email" />
-  </div>
-
-  <div class="control-row">
-    <div class="control">
-      <label for="password">Password</label>
-      <input id="password" type="password" name="password" />
+<div class="content">
+  <form>
+    <h2>Welcome on board!</h2>
+    <p>We just need a little bit of data from you to get you started 🚀</p>
+    <div class="control-row">
+      <div class="control">
+        <label for="username">Username</label>
+        <input id="username" type="text" name="username" />
+      </div>
+      <div class="control">
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" />
+      </div>
     </div>
 
-    <div class="control">
-      <label for="confirm-password">Confirm Password</label>
-      <input id="confirm-password" type="password" name="confirm-password" />
-    </div>
-  </div>
+    <div class="control-row">
+      <div class="control">
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" />
+      </div>
 
-  <div class="control-row">
-    <div class="control">
-      <label for="terms-and-conditions">
-        <input type="checkbox" id="terms-and-conditions" name="terms" />
-        I agree to the terms and conditions
-      </label>
+      <div class="control">
+        <label for="confirm-password">Confirm Password</label>
+        <input id="confirm-password" type="password" name="confirm-password" />
+      </div>
     </div>
-  </div>
 
-  <p class="form-actions">
-    <button type="reset" class="button button-flat">Reset</button>
-    <button type="submit" class="button">Sign up</button>
-  </p>
-</form>
+    <div class="register-link">
+      <span>If you already have a profile click:</span><a href="/login">Here</a>
+    </div>
+
+    <p class="form-actions">
+      <button type="reset" class="button button-flat">Reset</button>
+      <button type="submit" class="button">Sign up</button>
+    </p>
+  </form>
+</div>
