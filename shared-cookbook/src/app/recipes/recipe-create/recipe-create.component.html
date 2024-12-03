@@ -1,1 +1,61 @@
-<p>recipe-create works!</p>
+<form>
+  <h2>Create a recipe</h2>
+  <p>Share your recipe 👩‍🍳</p>
+  <div class="control-row">
+    <div class="control">
+      <label for="recipeName">Recipe Name</label>
+      <input id="recipeName" type="text" name="RecipeName" />
+    </div>
+  </div>
+  <div class="control-row">
+    <div class="control">
+      <label for="recipeTipe">Recipe Type</label>
+      <select id="recipeTipe" name="recipeTipe" formControlName="recipeTipe">
+        <option value="" disabled selected>
+          Please, choose the recipe type
+        </option>
+        <option value="Soup">Soup</option>
+        <option value="Appetizer">Appetizer</option>
+        <option value="Main Course">Main Course</option>
+        <option value="Dessert">Dessert</option>
+      </select>
+    </div>
+  </div>
+  <div class="control-row">
+    <div class="control">
+      <label for="preparationTime">Preparation Time in Minutes</label>
+      <input id="preparationTime" type="number" name="preparationTime" />
+    </div>
+  </div>
+
+  <div class="control-row">
+    <div class="control">
+      <label for="imageURL">Image URL</label>
+      <input id="imageURL" type="text" name="imageURL" />
+    </div>
+  </div>
+
+  <div class="control-row">
+    <div class="control">
+      <label for="description">Short Description</label>
+      <textarea id="description" rows="3" name="description"></textarea>
+    </div>
+  </div>
+  <div class="control-row">
+    <div class="control">
+      <label for="ingredients">Ingredients</label>
+      <textarea id="ingredients" rows="2" name="ingredients"></textarea>
+    </div>
+  </div>
+  <div class="control-row">
+    <div class="control">
+      <label for="instructions">Preparation instructions</label>
+      <textarea id="instructions" rows="4" name="instructions"></textarea>
+    </div>
+  </div>
+
+  <p class="form-actions">
+    <button type="reset" class="button button-flat">Reset</button>
+    <button type="submit" class="button">Sign up</button>
+  </p>
+</form>
