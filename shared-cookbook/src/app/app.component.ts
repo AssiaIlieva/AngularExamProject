@@ -2,10 +2,9 @@ import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { HeaderComponent } from './core/header/header.component';
-
+import { FooterComponent } from './core/footer/footer.component';
 import { ErrorService } from './shared/error.service';
 import { ErrorModalComponent } from './shared/modal/error-modal/error-modal.component';
-import { FooterComponent } from './core/footer/footer.component';
 
 @Component({
   selector: 'app-root',

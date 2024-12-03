@@ -1,6 +1,6 @@
 .cardWrapper {
   width: 300px; /* Ширина на картата */
-
+  height: 400px;
   padding: 20px; /* Вътрешен падинг */
   padding-bottom: 10px; /* Падинг отдолу */
   border: 1px solid #cf9359; /* Бежова рамка */
@@ -20,9 +20,6 @@
   position: relative;
   border-radius: 8px;
   display: flex;
-}
-h1 {
-  font-size: 1.2rem;
 }
 
 .card:hover {
@@ -50,15 +47,14 @@ h1 {
 
 .title {
   margin-top: 15px;
-  flex: 0 1 auto;
+  flex: 1 1 auto;
 }
 
 .button-link {
-  margin-top: 20px;
+  margin-top: 5px;
   background: url("/icon-more.png") no-repeat;
   width: 16px;
   height: 16px;
-  padding-bottom: 10px;
   padding-left: 20px;
 }
 
@@ -72,7 +68,7 @@ a {
 }
 .border {
   border-bottom: 1px solid #dadacb;
-  margin: 10px 0;
+  margin: 5px 0;
 }
 .fallback-text {
   text-align: center;
@@ -117,14 +113,17 @@ a {
 .panel-wrapper .title h1 {
   color: #50453b;
   font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
   font-weight: normal;
-  padding-top: 20px;
+  padding: 0;
 }
 .panel-wrapper .border {
   border-bottom: 1px solid #dadacb;
 }
 .panel-wrapper .content p {
-  padding-top: 15px;
+  padding-top: 5px;
+  line-height: 1rem;
+  font-size: 0.7rem;
 }
 .panel-wrapper .button-link {
   margin-top: 20px;
@@ -141,7 +140,7 @@ a {
   gap: 20px;
 }
 .content {
-  height: 140px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
