@@ -17,13 +17,25 @@
       <div class="menu">
         <ul>
           <li class="marRight20">
-            <a class="active" href="/">home</a>
+            <a routerLink="/home" routerLinkActive="active">home</a>
           </li>
-          <li class="marRight20"><a href="recipes">recipes</a></li>
-          <li><a href="create-recipe">Create recipe</a></li>
-          <li class="marRight20"><a href="login">Login</a></li>
-          <li class="marRight20"><a href="register">Register</a></li>
-          <li><a href="my-recipes">My recipes</a></li>
+          <li class="marRight20">
+            <a routerLink="recipes" routerLinkActive="active">recipes</a>
+          </li>
+          <li>
+            <a routerLink="create-recipe" routerLinkActive="active"
+              >Create recipe</a
+            >
+          </li>
+          <li class="marRight20">
+            <a routerLink="login" routerLinkActive="active">Login</a>
+          </li>
+          <li class="marRight20">
+            <a routerLink="register" routerLinkActive="active">Register</a>
+          </li>
+          <li>
+            <a routerLink="my-recipes" routerLinkActive="active">My recipes</a>
+          </li>
         </ul>
       </div>
     </div>
