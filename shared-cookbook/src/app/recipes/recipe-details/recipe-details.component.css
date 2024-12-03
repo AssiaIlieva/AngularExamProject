@@ -1,13 +1,13 @@
 .container {
   flex: 1;
-  height: 63vh;
+  min-height: 63vh;
 }
 
 .cardWrapper {
   width: 80%; /* Увеличена ширина на картата с още 5% */
   max-width: 1000px; /* Максимална ширина на картата */
   padding: 20px;
-  margin: 60px auto; /* Центриране на картата по хоризонтала */
+  margin: 50px auto; /* Центриране на картата по хоризонтала */
   border: 1px solid #cf9359;
   border-radius: 8px;
   background-color: #f3f3ee;

@@ -1457,7 +1457,7 @@
         _ownerId: '78d8bbbb-31fa-4208-bfd2-5360a62c0d02',
         recipeName: 'Crème Brûlée',
         recipeType: 'Dessert',
-        preparationTime: '01:00',
+        preparationTime: 60,
         imageURL:
           'https://brunchandbatter.com/wp-content/uploads/2022/06/Yogurt-Brulee-FI.jpg',
         description:
@@ -1473,7 +1473,7 @@
         _ownerId: '35c62d76-8152-4626-8712-eeb96381bea8',
         recipeName: 'Zucchini Fritters',
         recipeType: 'Appetizer',
-        preparationTime: '01:00',
+        preparationTime: 60,
         imageURL:
           'https://www.healthygffamily.com/wp-content/uploads/2019/07/8D52E1C3-D91E-47E0-8FE7-A582A57F4D52-scaled.jpg',
         description:
@@ -1489,7 +1489,7 @@
         _ownerId: '35c62d76-8152-4626-8712-eeb96381bea8',
         recipeName: 'Apple Pie',
         recipeType: 'Dessert',
-        preparationTime: '02:30',
+        preparationTime: 150,
         imageURL:
           'https://jessicainthekitchen.com/wp-content/uploads/2021/09/Vegan-Apple-Pie-14-500x375.jpg',
         description:
@@ -1505,7 +1505,7 @@
         _ownerId: '78d8bbbb-31fa-4208-bfd2-5360a62c0d02',
         recipeName: 'Mushroom Risotto',
         recipeType: 'Appetizer',
-        preparationTime: '01:00',
+        preparationTime: 60,
         imageURL:
           'https://www.allrecipes.com/thmb/9d8yV77PRL3wbRwcpAIxtZPdi5Q=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/85389-gourmet-mushroom-risotto-DDMFS-4x3-a8a80a8deb064c6a8f15452b808a0258.jpg',
         description:
@@ -1521,7 +1521,7 @@
         _ownerId: '847ec027-f659-4086-8032-5173e2f9c93a',
         recipeName: 'Meat Balls in Tomato Sauce',
         recipeType: 'Main Course',
-        preparationTime: '01:00',
+        preparationTime: 70,
         imageURL:
           'https://www.allrecipes.com/thmb/bA6K66Wfj2oyXQtnZob8FP-UFU8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/220854-chef-johns-italian-meatballs-DDMFS-beauty-4x3-BG-31732-f527165240e34fb081a5290e47d580d0.jpg',
         description:
@@ -1537,7 +1537,7 @@
         _ownerId: '78d8bbbb-31fa-4208-bfd2-5360a62c0d02',
         recipeName: 'Spaghetty Carbonara',
         recipeType: 'Main Course',
-        preparationTime: '00:45',
+        preparationTime: 45,
         imageURL:
           'https://anitalianinmykitchen.com/wp-content/uploads/2021/03/carbonara-photo-.jpg',
         description:
@@ -1553,7 +1553,7 @@
         _ownerId: '847ec027-f659-4086-8032-5173e2f9c93a',
         recipeName: 'Bruschetta',
         recipeType: 'Appetizer',
-        preparationTime: '00:30',
+        preparationTime: 30,
         imageURL:
           'https://www.howtocook.recipes/wp-content/uploads/2021/09/Bruschetta-recipe-500x500.jpg',
         description:
@@ -1569,7 +1569,7 @@
         _ownerId: '78d8bbbb-31fa-4208-bfd2-5360a62c0d02',
         recipeName: 'Pepper Steak',
         recipeType: 'Main Course',
-        preparationTime: '00:45',
+        preparationTime: 50,
         imageURL:
           'https://noobcook.com/wp-content/uploads/2012/02/blackpeppersteak.jpg',
         description:
@@ -1585,7 +1585,7 @@
         _ownerId: '35c62d76-8152-4626-8712-eeb96381bea8',
         recipeName: 'Tiramisu',
         recipeType: 'Dessert',
-        preparationTime: '00:30',
+        preparationTime: 40,
         imageURL:
           'https://bakewithzoha.com/wp-content/uploads/2023/12/hot-chocolate-tiramisu-featured.jpg',
         description:
