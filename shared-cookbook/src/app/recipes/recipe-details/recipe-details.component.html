@@ -1,51 +1,45 @@
-<div class="cardWrapper">
-  <div class="card">
-    <img
-      src="https://bakewithzoha.com/wp-content/uploads/2023/12/hot-chocolate-tiramisu-featured.jpg"
-      alt="Tiramisu"
-      class="image"
-    />
-    <div class="details">
-      <div class="title">
-        <h3>Dessert</h3>
-        <h1 class="borderBottom">Tiramisu</h1>
-      </div>
-      <div class="content">
-        <h2>Description</h2>
-        <p>
-          'Rich Italian dessert made of layers of coffee-soaked ladyfingers,
-          mascarpone cheese, and cocoa powder.'
-        </p>
-        <div class="border"></div>
-        <h2>Preparation Time</h2>
-        <p>30min</p>
-        <div class="border"></div>
-        <h2>Ingredients</h2>
-        <p>
-          1 packet ladyfingers, 500g mascarpone, 3 eggs, 3 table spoons sugar,
-          500ml strong coffee, 50ml marsala
-        </p>
-        <div class="border"></div>
-        <h2>Preparation Instructions</h2>
-        <p>
-          Brew and cool the coffee, then mix in the marsala. Separate the eggs
-          and beat the yolks with sugar until creamy; fold in mascarpone until
-          smooth. Whip the egg whites until stiff and gently fold into the
-          mascarpone mixture. Dip ladyfingers briefly in the coffee mixture,
-          then layer them in a dish. Spread half of the mascarpone mixture over
-          the ladyfingers, then repeat layers. Chill for at least 4 hours, and
-          dust with cocoa powder before serving.
-        </p>
-        <div class="buttonContainer">
-          <a
-            href="/recipes/59c16686-08b2-4b45-8a8a-0ccf702e1056/edit"
-            class="button"
-            >Edit</a
-          >
-          <button class="button">Delete</button>
+<div class="container">
+  <div class="cardWrapper">
+    <div class="card">
+      <img
+        [src]="recipe().imageURL"
+        [alt]="recipe().recipeName"
+        class="image"
+      />
+      <div class="details">
+        <div class="title">
+          <h3>{{ recipe().recipeType }}</h3>
+          <h1 class="borderBottom">{{ recipe().recipeName }}</h1>
         </div>
+        <div class="content">
+          <h2>Description</h2>
+          <p>
+            {{ recipe().description }}
+          </p>
+          <div class="border"></div>
+          <h2>Preparation Time</h2>
+          <p>{{ recipe().preparationTime }}min.</p>
+          <div class="border"></div>
+          <h2>Ingredients</h2>
+          <p>
+            {{ recipe().ingredients }}
+          </p>
+          <div class="border"></div>
+          <h2>Preparation Instructions</h2>
+          <p>
+            {{ recipe().instructions }}
+          </p>
+          <div class="buttonContainer">
+            <a
+              href="/recipes/59c16686-08b2-4b45-8a8a-0ccf702e1056/edit"
+              class="button"
+              >Edit</a
+            >
+            <button class="button">Delete</button>
+          </div>
+        </div>
+        <!-- <Comment></Comment> -->
       </div>
-      <!-- <Comment></Comment> -->
     </div>
   </div>
 </div>

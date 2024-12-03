@@ -25,7 +25,6 @@ export class RecipesComponent implements OnInit {
     const subcription = this.apiService.getRecipes().subscribe({
       next: (recipes) => {
         this.recipes.set(recipes);
-        console.log(recipes);
       },
       error: (error: Error) => {
         console.log(error);
