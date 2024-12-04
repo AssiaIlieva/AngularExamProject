@@ -9,11 +9,12 @@ import {
 
 import { ApiRecipesService } from '../api.recipes.service';
 import { Recipe } from '../recipe.model';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-details',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './recipe-details.component.html',
   styleUrl: './recipe-details.component.css',
 })

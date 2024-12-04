@@ -30,9 +30,7 @@
             {{ recipe().instructions }}
           </p>
           <div class="buttonContainer">
-            <a
-              href="/recipes/59c16686-08b2-4b45-8a8a-0ccf702e1056/edit"
-              class="button"
+            <a [routerLink]="['/recipe-edit', recipe()._id]" class="button"
               >Edit</a
             >
             <button class="button">Delete</button>
