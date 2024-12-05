@@ -2,15 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
 
-import { Recipe } from './recipe.model';
+import { NewRecipeData, Recipe } from './recipe.model';
 import { ErrorService } from '../shared/error.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiRecipesService {
-  baseUrl: string = 'http://localhost:3030/data';
-  recipesUrl: string = `${this.baseUrl}/recipes`;
+  recipesUrl: string = `/api/data/recipes`;
   last3QuaryUrl: string = '?sortBy=_createdOn%20desc&offset=0&pageSize=3';
 
   private errorService = inject(ErrorService);
@@ -45,5 +44,26 @@ export class ApiRecipesService {
         return throwError(() => new Error(errorMessage));
       })
     );
+  }
+
+  createRecipe(
+    recipeName: string,
+    recipeType: string,
+    preparationTime: number,
+    imageURL: string,
+    description: string,
+    ingredients: string,
+    instructions: string
+  ) {
+    const payload: NewRecipeData = {
+      recipeName,
+      recipeType,
+      preparationTime,
+      imageURL,
+      description,
+      ingredients,
+      instructions,
+    };
+    return this.httpClient.post<NewRecipeData>(this.recipesUrl, payload);
   }
 }
