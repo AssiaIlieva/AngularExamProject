@@ -46,47 +46,15 @@ form {
   color: #142020;
 }
 
-.control select {
-  display: block;
-  width: 100%;
-  max-width: 15rem;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border-radius: 4px;
-  border: 1px solid #758a8a;
-  background-color: #869999;
-  color: #142020;
-}
-
-.control:has(input[type="checkbox"]) {
-  display: flex;
-  align-items: center;
-}
-
-.control:has(input[type="checkbox"]) label {
-  margin: 0;
-}
-
-.control input[type="checkbox"] {
-  display: inline-block;
-  width: auto;
-  max-width: none;
-  margin-right: 0.5rem;
-  border-radius: 0;
-  border: none;
-  background-color: transparent;
-  color: #d9e2f1;
-}
-
 .control-error {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  color: #ffca99;
+  color: #cf2a0a;
   height: 0.5rem;
   padding: 0.25rem 0 0 0;
   height: 1.5rem;
-  margin-bottom: 1rem;
+  /* margin-bottom: 0.5rem; */
 }
 
 .control-error p {
@@ -135,7 +103,7 @@ input.ng-invalid.ng-touched.ng-dirty {
   border-color: #f84e2c;
 }
 .register-link {
-  margin-top: 20px;
+  margin: 1rem 0;
   font-size: 1.2rem;
 }
 .register-link span {
