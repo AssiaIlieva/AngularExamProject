@@ -10,8 +10,7 @@
     </div>
     <div class="header-right-panel">
       <div class="header-right-panel-top">
-        <p>Call Us : 000 888 8888</p>
-        <p><a href="#">Mail Us : info&#64;cookbook.com</a></p>
+        <p *ngIf="user$ | async as user">Welcome, {{ user.username }}</p>
       </div>
 
       <div class="menu">
@@ -22,19 +21,21 @@
           <li class="marRight20">
             <a routerLink="recipes" routerLinkActive="active">recipes</a>
           </li>
-          <li>
+
+          <li *ngIf="!(user$ | async)">
+            <a routerLink="login" routerLinkActive="active">Login</a>
+          </li>
+          <li *ngIf="!(user$ | async)">
+            <a routerLink="register" routerLinkActive="active">Register</a>
+          </li>
+
+          <li *ngIf="user$ | async">
             <a routerLink="recipe-create" routerLinkActive="active"
               >Create recipe</a
             >
           </li>
-          <li class="marRight20">
-            <a routerLink="login" routerLinkActive="active">Login</a>
-          </li>
-          <li class="marRight20">
-            <a routerLink="register" routerLinkActive="active">Register</a>
-          </li>
-          <li>
-            <a routerLink="my-recipes" routerLinkActive="active">My recipes</a>
+          <li *ngIf="user$ | async">
+            <a (click)="logout()">Logout</a>
           </li>
         </ul>
       </div>
