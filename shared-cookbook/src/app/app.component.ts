@@ -5,6 +5,7 @@ import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { ErrorService } from './shared/error.service';
 import { ErrorModalComponent } from './shared/modal/error-modal/error-modal.component';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { ErrorModalComponent } from './shared/modal/error-modal/error-modal.comp
     HeaderComponent,
     ErrorModalComponent,
     FooterComponent,
+    AuthenticateComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

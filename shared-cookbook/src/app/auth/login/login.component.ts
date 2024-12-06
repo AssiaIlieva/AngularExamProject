@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 import { AuthApiService } from '../auth-api.service';
 
@@ -12,7 +12,8 @@ import { AuthApiService } from '../auth-api.service';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  userService = inject(AuthApiService);
+  private userService = inject(AuthApiService);
+  private router = inject(Router);
   error = signal<string>('');
 
   onSubmit(form: NgForm) {
@@ -25,6 +26,7 @@ export class LoginComponent {
     this.userService.login(email, password).subscribe({
       next: () => {
         console.log('Login successful!');
+        this.router.navigate(['/home']);
       },
       error: (error: Error) => {
         console.log(error);

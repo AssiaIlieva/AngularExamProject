@@ -12,25 +12,21 @@ export class AuthApiService {
   private httpClient = inject(HttpClient);
   private errorService = inject(ErrorService);
 
-  // BehaviorSubject, който държи текущия логнат потребител
   private user$$ = new BehaviorSubject<LoggedUser | null>(
     this.getLoggedUserFromStorage()
   );
-  user$ = this.user$$.asObservable(); // Достъп до потребителя като Observable
+  user$ = this.user$$.asObservable();
 
-  // GETTER: Проверка дали има логнат потребител
   get isLogged(): boolean {
-    return !!this.user$$.value; // Проверява дали има стойност в BehaviorSubject
+    return !!this.user$$.value;
   }
 
-  // Извличане на потребителя от localStorage (инициализация при стартиране)
   getLoggedUserFromStorage(): LoggedUser | null {
     const user = localStorage.getItem('auth');
     return user ? JSON.parse(user) : null;
   }
 
   constructor() {
-    // Синхронизация на BehaviorSubject с localStorage
     this.user$.subscribe((user) => {
       if (user) {
         localStorage.setItem('auth', JSON.stringify(user));
@@ -40,13 +36,12 @@ export class AuthApiService {
     });
   }
 
-  // Метод за логване
   login(email: string, password: string) {
     return this.httpClient
       .post<LoggedUser>(`${this.usersUrl}/login`, { email, password })
       .pipe(
         tap((response) => {
-          this.user$$.next(response); // Обновяване на състоянието
+          this.user$$.next(response);
         }),
         catchError((error) => {
           const errorMessage =
@@ -57,7 +52,6 @@ export class AuthApiService {
       );
   }
 
-  // Метод за регистриране
   register(email: string, username: string, password: string) {
     return this.httpClient
       .post<LoggedUser>(`${this.usersUrl}/register`, {
@@ -67,7 +61,7 @@ export class AuthApiService {
       })
       .pipe(
         tap((response) => {
-          this.user$$.next(response); // Обновяване на състоянието
+          this.user$$.next(response);
         }),
         catchError((error) => {
           const errorMessage =
@@ -78,13 +72,12 @@ export class AuthApiService {
       );
   }
 
-  // Метод за излизане
   logout() {
     return this.httpClient
       .get(`${this.usersUrl}/logout`, { responseType: 'text' })
       .pipe(
         tap(() => {
-          this.user$$.next(null); // Изчистване на състоянието
+          this.user$$.next(null);
         }),
         catchError((error) => {
           const errorMessage =

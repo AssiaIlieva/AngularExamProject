@@ -1,8 +1,8 @@
 dialog {
-  position: fixed; /* Фиксира модала спрямо прозореца */
-  top: 50%; /* Центриране по вертикала */
-  left: 40%; /* Центриране по хоризонтала */
-  transform: translate(-50%, -50%); /* Изместване за перфектно центриране */
+  position: fixed;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
   min-width: 30rem;
   padding: 0;
   z-index: 2;

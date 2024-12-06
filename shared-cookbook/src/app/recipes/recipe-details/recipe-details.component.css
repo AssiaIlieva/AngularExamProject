@@ -4,10 +4,10 @@
 }
 
 .cardWrapper {
-  width: 80%; /* Увеличена ширина на картата с още 5% */
-  max-width: 1000px; /* Максимална ширина на картата */
+  width: 80%;
+  max-width: 1000px;
   padding: 20px;
-  margin: 50px auto; /* Центриране на картата по хоризонтала */
+  margin: 50px auto;
   border: 1px solid #cf9359;
   border-radius: 8px;
   background-color: #f3f3ee;
@@ -28,7 +28,7 @@
   height: 40%;
   border-radius: 8px;
   object-fit: cover;
-  margin-right: 20px; /* Намаляване на разстоянието между изображението и текста */
+  margin-right: 20px;
 }
 
 .details {
@@ -37,47 +37,47 @@
 }
 
 .title h3 {
-  font-size: 1.1em; /* Намален размер на шрифта за h3 */
+  font-size: 1.1em;
   color: #cf9359;
 
   margin-bottom: 10px;
 }
 
 .title h1 {
-  font-size: 1.6em; /* Намален размер на шрифта за h1 */
+  font-size: 1.6em;
   color: #50453b;
-  margin-bottom: 10px; /* Намалено разстояние под h1 */
+  margin-bottom: 10px;
 }
 
 h2 {
   font-family: "Ropa Sans", sans-serif;
-  font-size: 1.1em; /* Намален размер на шрифта за h2 */
+  font-size: 1.1em;
   color: #50453b;
-  font-weight: normal; /* Нормално тегло на шрифта */
-  margin-bottom: 8px; /* Разстояние под h2 */
+  font-weight: normal;
+  margin-bottom: 8px;
 }
 
 p {
   font-family: "Ropa Sans", sans-serif;
-  font-size: 10px; /* Намален размер на шрифта за параграфи */
+  font-size: 10px;
   color: #978e86;
-  line-height: 1.3; /* Намалено разстояние между редовете */
+  line-height: 1.3;
 }
 
 .border {
   border-bottom: 1px solid #cf9359;
-  margin-bottom: 5px; /* Разстояние около границата */
+  margin-bottom: 5px;
 }
 
 .buttonContainer {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px; /* Разстояние над бутоните */
-  padding-bottom: 10px; /* Разстояние от долната част на компонента */
+  margin-top: 10px;
+  padding-bottom: 10px;
 }
 
 .button {
-  padding: 8px 15px; /* Намалена височина и ширина на бутоните */
+  padding: 8px 15px;
   background-color: #cf9359;
   color: white;
   text-transform: uppercase;
@@ -86,9 +86,9 @@ p {
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  flex: 1; /* Равномерно разпределение на бутоните */
-  margin: 0 10px; /* Разстояние между бутоните */
-  font-size: 0.9em; /* Намален размер на буквите на бутоните */
+  flex: 1;
+  margin: 0 10px;
+  font-size: 0.9em;
 }
 
 .button:hover {
@@ -128,8 +128,8 @@ p {
 }
 
 .commentForm {
-  width: 100%; /* Ширина на формата, която използва 100% от родителския контейнер */
-  max-width: 600px; /* Можеш да коригираш максималната ширина, ако е необходимо */
+  width: 100%;
+  max-width: 600px;
   margin-top: 20px;
   padding: 20px;
   border: 1px solid #cf9359;
@@ -151,7 +151,7 @@ p {
 }
 
 .textarea {
-  width: 100%; /* Разширява текстовото поле до ширината на родителския контейнер */
+  width: 100%;
   padding: 10px;
   border-radius: 4px;
   border: 1px solid #cf9359;
@@ -159,8 +159,8 @@ p {
   font-size: 15px;
   color: #50453b;
   line-height: 1.3;
-  box-sizing: border-box; /* Включва padding и border в ширината на полето */
-  resize: vertical; /* Позволява вертикално разширяване на полето */
+  box-sizing: border-box;
+  resize: vertical;
 }
 
 .staticField {
