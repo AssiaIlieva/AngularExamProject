@@ -10,7 +10,7 @@ import { ErrorService } from '../shared/error.service';
 })
 export class ApiRecipesService {
   recipesUrl: string = `/api/data/recipes`;
-  last3QuaryUrl: string = '?sortBy=_createdOn%20desc&offset=0&pageSize=3';
+  last4QuaryUrl: string = '?sortBy=_createdOn%20desc&offset=0&pageSize=4';
 
   private errorService = inject(ErrorService);
   private httpClient = inject(HttpClient);
@@ -24,9 +24,9 @@ export class ApiRecipesService {
     );
   }
 
-  getLast3Recipes() {
+  getLast4Recipes() {
     return this.httpClient.get<Recipe[]>(
-      `${this.recipesUrl}${this.last3QuaryUrl}`
+      `${this.recipesUrl}${this.last4QuaryUrl}`
     );
   }
 
