@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
 
@@ -37,7 +37,7 @@ export class ApiRecipesService {
 
   private fetchRecipes(url: string, errorMessage: string) {
     return this.httpClient.get<Recipe[]>(url).pipe(
-      catchError((error) => {
+      catchError((error: HttpErrorResponse) => {
         this.errorService.showError(errorMessage);
         console.log(error);
 
@@ -46,24 +46,17 @@ export class ApiRecipesService {
     );
   }
 
-  createRecipe(
-    recipeName: string,
-    recipeType: string,
-    preparationTime: number,
-    imageURL: string,
-    description: string,
-    ingredients: string,
-    instructions: string
-  ) {
-    const payload: NewRecipeData = {
-      recipeName,
-      recipeType,
-      preparationTime,
-      imageURL,
-      description,
-      ingredients,
-      instructions,
-    };
-    return this.httpClient.post<NewRecipeData>(this.recipesUrl, payload);
+  createRecipe(data: NewRecipeData) {
+    return this.httpClient.post<Recipe>(this.recipesUrl, data);
+  }
+
+  removeRecipe(recipeId: string) {
+    const url: string = `${this.recipesUrl}/${recipeId}`;
+    return this.httpClient.delete<Recipe>(url);
+  }
+
+  updateRecipe(recipeId: string, data: NewRecipeData) {
+    const url: string = `${this.recipesUrl}/${recipeId}`;
+    return this.httpClient.put<Recipe>(url, data);
   }
 }
