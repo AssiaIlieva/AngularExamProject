@@ -9,4 +9,17 @@
       <h3>Check Out the Newest Recipes</h3>
     </div>
   </section>
+  <div class="cards-wrapper">
+    @if(isFetching() && !error() ){
+    <app-loader />
+    } @if(recipes().length === 0) {
+    <p class="fallback-text">Unfortunately, no recipes are shared yet!</p>
+    }@if (recipes()) {
+    <ul class="cards-container">
+      @for (recipe of recipes(); track recipe._id) {
+      <app-recipe-card [recipe]="recipe" />
+      }
+    </ul>
+    }
+  </div>
 </div>
