@@ -6,7 +6,6 @@
         <img src="home_image_400x267.jpg" alt="" />
       </div>
       <h2>Your recipe sharing journey starts here</h2>
-      <h3>Check Out the Newest Recipes</h3>
     </div>
   </section>
   <div class="cards-wrapper">
@@ -15,6 +14,7 @@
     } @if(recipes().length === 0) {
     <p class="fallback-text">Unfortunately, no recipes are shared yet!</p>
     }@if (recipes()) {
+    <h3>Check Our Newest Recipes</h3>
     <ul class="cards-container">
       @for (recipe of recipes(); track recipe._id) {
       <app-recipe-card [recipe]="recipe" />

@@ -2,7 +2,7 @@
 
 .panel-wrapper {
   width: 100%;
-  min-height: 68vh;
+  min-height: 65vh;
   max-width: 1560px;
   margin: 0 auto;
   padding-bottom: 60px;
@@ -11,7 +11,6 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
   box-sizing: border-box;
 }
 .hero-section {
@@ -20,7 +19,7 @@
   justify-content: space-between;
   padding: 1rem;
   color: #f3f3ee;
-  min-height: 60vh;
+  min-height: 50vh;
   text-align: center;
   box-sizing: border-box;
 }
@@ -32,26 +31,35 @@
   justify-content: space-between;
   padding: 2rem;
   align-items: center;
+  padding-bottom: 0;
 }
 
 .hero-content h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   font-family: "Dancing Script", cursive;
   font-weight: bold;
-  color: #cf9359;
+  color: #414141;
+}
+
+.hero-content h2 {
+  margin: 1rem auto;
+  font-size: 2rem;
+  font-family: "Dancing Script", cursive;
+  color: #414141;
 }
 
 .hero-content p {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  font-family: "Dancing Script", cursive;
-  color: #f3f3ee;
-}
-
-.hero-content h3 {
   font-size: 2rem;
   font-family: "Dancing Script", cursive;
+  color: #414141;
+}
+
+h3 {
+  display: block;
+  font-size: 2rem;
+  font-family: "Dancing Script", cursive;
+  color: #414141;
 }
 
 .hero-image img {

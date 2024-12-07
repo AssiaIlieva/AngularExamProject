@@ -17,7 +17,7 @@ body {
   flex-direction: column;
 }
 body {
-  background: url("/pattern-2.jpg");
+  background: url("/pattern-3.jpg");
   max-width: 100%;
 }
 
@@ -57,62 +57,6 @@ h1 {
   text-transform: uppercase;
   font-weight: normal;
 }
-/* 
-/*-------------------------------------------------
-CSS TWEAKS
--------------------------------------------------*/
-/* .clearing {
-  clear: both;
-}
-.fltLeft {
-  float: left;
-}
-.flrRight {
-  float: right;
-}
-.marLeft30 {
-  margin-left: 30px !important;
-}
-.marLeft20 {
-  margin-left: 20px;
-}
-.marRight20 {
-  margin-right: 20px;
-}
-.marRight25 {
-  margin-right: 25px;
-}
-.marRight30 {
-  margin-right: 30px;
-}
-.marginTop {
-  margin-top: 30px;
-}
-.marginTop10 {
-  margin-top: 10px;
-}
-.marginBottom {
-  margin-bottom: 60px;
-}
-.marBottom30 {
-  margin-bottom: 30px;
-}
-.padTop {
-  padding-top: 20px;
-}
-.padBottom {
-  padding-bottom: 30px;
-}
-.padBottom20 {
-  padding-bottom: 20px;
-}
-.wid960 {
-  width: 960px !important;
-} */
-
-/*-------------------------------------------------
-GENERAL CLASSES
--------------------------------------------------*/
 
 .panel {
   overflow: hidden;
