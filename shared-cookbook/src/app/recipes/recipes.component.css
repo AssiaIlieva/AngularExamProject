@@ -10,8 +10,7 @@
   text-align: center; /* Центрира текста */
   box-sizing: border-box; /* Включва падинга и бордера в общата ширина */
   margin-top: 40px; /* Външен падинг отгоре - увеличен */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* transition: transform 0.3s, box-shadow 0.3s; */
+  box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.5);
 }
 .card {
   width: auto;
@@ -30,7 +29,7 @@
 
 .cardWrapper:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.5);
 }
 
 .image {
@@ -102,15 +101,6 @@ a {
   box-sizing: border-box;
 }
 
-.panel-wrapper .panel {
-  width: 260px;
-  background: #f3f3ee;
-  float: left;
-  padding: 20px;
-}
-.panel-wrapper .title {
-  padding-bottom: 10px;
-}
 .panel-wrapper .title h1 {
   color: #50453b;
   font-family: "Source Sans Pro", sans-serif;
