@@ -76,6 +76,14 @@ p {
   padding-bottom: 10px;
 }
 
+.back-buttonContainer {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+  padding-bottom: 10px;
+}
+
 .button {
   padding: 8px 15px;
   background-color: #cf9359;
