@@ -29,12 +29,14 @@
           <p>
             {{ recipe().instructions }}
           </p>
+          @if(isOwner()){
           <div class="buttonContainer">
             <a [routerLink]="['/recipe-edit', recipe()._id]" class="button"
               >Edit</a
             >
-            <button class="button">Delete</button>
+            <button class="button" (click)="deleteRecipe()">Delete</button>
           </div>
+          }
         </div>
         <!-- <Comment></Comment> -->
       </div>

@@ -1,5 +1,6 @@
 import {
   Component,
+  computed,
   DestroyRef,
   inject,
   input,
@@ -9,7 +10,8 @@ import {
 
 import { ApiRecipesService } from '../api.recipes.service';
 import { Recipe } from '../recipe.model';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { AuthApiService } from '../../auth/auth-api.service';
 
 @Component({
   selector: 'app-recipe-details',
@@ -21,6 +23,8 @@ import { RouterLink } from '@angular/router';
 export class RecipeDetailsComponent implements OnInit {
   private apiService = inject(ApiRecipesService);
   private destroyRef = inject(DestroyRef);
+  private authService = inject(AuthApiService);
+  private router = inject(Router);
 
   recipeId = input.required<string>();
   recipe = signal<Recipe>({
@@ -37,6 +41,10 @@ export class RecipeDetailsComponent implements OnInit {
   });
   isFetching = signal<boolean>(false);
   error = signal<string>('');
+  isOwner = computed(() => {
+    const user = this.authService.getLoggedUserFromStorage();
+    return user ? user._id === this.recipe()._ownerId : false;
+  });
 
   ngOnInit(): void {
     this.isFetching.set(true);
@@ -58,5 +66,23 @@ export class RecipeDetailsComponent implements OnInit {
     this.destroyRef.onDestroy(() => {
       subsription.unsubscribe();
     });
+  }
+
+  deleteRecipe() {
+    if (confirm('Are you sure you want to delete this recipe?')) {
+      const subscription = this.apiService
+        .removeRecipe(this.recipe()._id)
+        .subscribe({
+          next: () => {
+            this.router.navigate(['/recipes']);
+          },
+          error: (error) => {
+            console.error('Failed to delete recipe:', error);
+          },
+        });
+      this.destroyRef.onDestroy(() => {
+        subscription.unsubscribe();
+      });
+    }
   }
 }
