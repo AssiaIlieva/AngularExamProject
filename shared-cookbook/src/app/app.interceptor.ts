@@ -1,5 +1,6 @@
-import { HttpInterceptorFn } from '@angular/common/http';
+import { HttpInterceptorFn, HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../environments/environment.development';
+import { catchError, throwError } from 'rxjs';
 
 const { apiUrl } = environment;
 const API = '/api';
@@ -26,5 +27,14 @@ export const appInterceptor: HttpInterceptorFn = (req, next) => {
 
   console.log(req);
 
-  return next(req);
+  return next(req).pipe(
+    catchError((error: HttpErrorResponse) => {
+      if (error.status === 403) {
+        console.warn('403 Forbidden - clearing local storage and redirecting');
+        localStorage.removeItem('auth');
+        window.location.reload();
+      }
+      return throwError(() => error);
+    })
+  );
 };
