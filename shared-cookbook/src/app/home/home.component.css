@@ -61,6 +61,11 @@ h3 {
   font-family: "Dancing Script", cursive;
   color: #414141;
 }
+.fallback-text {
+  font-size: 2.5rem;
+  font-family: "Dancing Script", cursive;
+  color: #414141;
+}
 
 .hero-image img {
   max-width: 100%;
