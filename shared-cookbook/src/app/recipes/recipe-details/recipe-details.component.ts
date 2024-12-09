@@ -7,16 +7,26 @@ import {
   OnInit,
   signal,
 } from '@angular/core';
-
-import { ApiRecipesService } from '../api.recipes.service';
-import { Recipe } from '../recipe.model';
 import { Router, RouterLink } from '@angular/router';
+
+import { ApiRecipesService } from '../recipes-api.service';
+import { Recipe } from '../recipe.model';
 import { AuthApiService } from '../../auth/auth-api.service';
+import { CommentsComponent } from './comments/comments.component';
+import { LoaderComponent } from '../../shared/loader/loader.component';
+import { CommentsApiService } from './comments/comments-api.service';
+import { Comment, NewComment } from './comments/comments.model';
+import { AddCommentComponent } from './comments/add-comment/add-comment.component';
 
 @Component({
   selector: 'app-recipe-details',
   standalone: true,
-  imports: [RouterLink],
+  imports: [
+    RouterLink,
+    CommentsComponent,
+    LoaderComponent,
+    AddCommentComponent,
+  ],
   templateUrl: './recipe-details.component.html',
   styleUrl: './recipe-details.component.css',
 })
@@ -25,6 +35,7 @@ export class RecipeDetailsComponent implements OnInit {
   private destroyRef = inject(DestroyRef);
   private authService = inject(AuthApiService);
   private router = inject(Router);
+  private commentsApiService = inject(CommentsApiService);
 
   recipeId = input.required<string>();
   recipe = signal<Recipe>({
@@ -41,19 +52,31 @@ export class RecipeDetailsComponent implements OnInit {
   });
   isFetching = signal<boolean>(false);
   error = signal<string>('');
-  isOwner = computed(() => {
-    const user = this.authService.getLoggedUserFromStorage();
-    return user ? user._id === this.recipe()._ownerId : false;
+
+  user = signal(this.authService.getLoggedUserFromStorage());
+
+  isAuthenticated = computed(() => {
+    return this.user() !== null;
   });
+
+  isOwner = computed(() => {
+    const currentUser = this.user();
+    return currentUser ? currentUser._id === this.recipe()._ownerId : false;
+  });
+
+  commentsReady = signal<boolean>(false);
+  comments = signal<Comment[]>([]);
+  isCommentFormVisible = signal<boolean>(false);
 
   ngOnInit(): void {
     this.isFetching.set(true);
-    const subsription = this.apiService
+
+    const recipeSubscription = this.apiService
       .getOneRecipe(this.recipeId())
       .subscribe({
         next: (recipe) => {
           this.recipe.set(recipe);
-          console.log(recipe);
+          this.fetchComments();
         },
         error: (error: Error) => {
           console.log(error);
@@ -63,9 +86,33 @@ export class RecipeDetailsComponent implements OnInit {
           this.isFetching.set(false);
         },
       });
+
     this.destroyRef.onDestroy(() => {
-      subsription.unsubscribe();
+      recipeSubscription.unsubscribe();
     });
+  }
+
+  private fetchComments() {
+    const subscription = this.commentsApiService.getComments().subscribe({
+      next: (comments) => {
+        const filteredComments = comments
+          .filter((comment) => comment.recipeId === this.recipe()._id)
+          .sort((a, b) => a._createdOn - b._createdOn);
+        this.comments.set(filteredComments);
+        this.commentsReady.set(true);
+      },
+      error: (error) => {
+        console.log(error);
+        this.error.set('Failed to load comments');
+      },
+    });
+    this.destroyRef.onDestroy(() => {
+      subscription.unsubscribe();
+    });
+  }
+
+  toggleCommentForm() {
+    this.isCommentFormVisible.set(!this.isCommentFormVisible());
   }
 
   deleteRecipe() {
@@ -78,6 +125,36 @@ export class RecipeDetailsComponent implements OnInit {
           },
           error: (error) => {
             console.error('Failed to delete recipe:', error);
+          },
+        });
+      this.destroyRef.onDestroy(() => {
+        subscription.unsubscribe();
+      });
+    }
+  }
+
+  onCommentSubmit(commentText: string) {
+    const user = this.user();
+    if (user && commentText.trim()) {
+      const newComment: NewComment = {
+        recipeId: this.recipe()._id,
+        text: commentText,
+        author: {
+          email: user.email,
+          username: user.username,
+          _id: user._id,
+        },
+      };
+
+      const subscription = this.commentsApiService
+        .addComment(newComment)
+        .subscribe({
+          next: (comment: Comment) => {
+            this.comments.update((comments) => [...comments, comment]);
+            this.isCommentFormVisible.set(false);
+          },
+          error: (error) => {
+            console.log('Failed to submit comment:', error);
           },
         });
       this.destroyRef.onDestroy(() => {
