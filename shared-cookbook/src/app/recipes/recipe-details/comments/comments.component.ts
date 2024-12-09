@@ -1,11 +1,4 @@
-import {
-  Component,
-  DestroyRef,
-  EventEmitter,
-  inject,
-  input,
-  signal,
-} from '@angular/core';
+import { Component, input } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 import { Comment } from './comments.model';

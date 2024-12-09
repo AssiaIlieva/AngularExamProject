@@ -1,39 +1,12 @@
 <div class="commentsSection">
   <h2>Comments</h2>
-  @if(comments.length === 0){
-  <p>No comments available for this recipe yet</p>
-  }
   <ul class="container">
     @for (comment of comments(); track comment._id) {
     <li class="comment">
-      <hr className="{styles.commentSeparator}" />
+      <hr className="commentSeparator" />
       <p>{{ comment._createdOn | date : "dd/MM/yyyy HH:mm" }}</p>
       <p>{{ comment.author.username }}: {{ comment.text }}</p>
     </li>
     }
   </ul>
 </div>
-<!-- {isAuthenticated && (
-      <>
-        {!showCommentForm && (
-          <button onClick={() => setShowCommentForm(true)} className={styles.button}>
-            Add comment
-          </button>
-        )}
-        {showCommentForm && (
-          <div className={styles.commentForm}>
-            <h2>Add your comment</h2>
-            <div className={styles.commentField}>
-              <div className={styles.staticField}>{username}</div>
-            </div>
-            <div className={styles.commentField}>
-              <label>Comment</label>
-              <textarea className={styles.textarea} value={newComment} onChange={(e) => setNewComment(e.target.value)} rows="3" />
-            </div>
-            <button onClick={handleAddComment} className={styles.button}>
-              Add
-            </button>
-          </div>
-        )}
-      </>
-    )} -->

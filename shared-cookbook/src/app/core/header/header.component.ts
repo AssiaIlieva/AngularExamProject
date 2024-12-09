@@ -1,8 +1,9 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
-import { AuthApiService } from '../../auth/auth-api.service';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
+
+import { AuthApiService } from '../../auth/auth-api.service';
 import { LoggedUser } from '../../auth/user.model';
 
 @Component({

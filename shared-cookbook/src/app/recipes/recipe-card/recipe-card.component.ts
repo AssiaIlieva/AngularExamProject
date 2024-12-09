@@ -1,7 +1,8 @@
 import { Component, input } from '@angular/core';
-import { Recipe } from '../recipe.model';
 import { RouterLink } from '@angular/router';
+
 import { TruncatePipe } from '../../shared/truncate.pipe';
+import { Recipe } from '../recipe.model';
 
 @Component({
   selector: 'app-recipe-card',

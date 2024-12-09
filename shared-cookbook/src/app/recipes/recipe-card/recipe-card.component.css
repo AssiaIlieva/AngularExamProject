@@ -1,15 +1,14 @@
 .cardWrapper {
-  width: 300px; /* Ширина на картата */
+  width: 300px;
   height: 380px;
-  padding: 20px; /* Вътрешен падинг */
-  padding-bottom: 10px; /* Падинг отдолу */
-  border: 1px solid #cf9359; /* Бежова рамка */
-  border-radius: 8px; /* Скругление на ъглите */
-  background-color: #f3f3ee; /* Фонов цвят */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Лека сянка */
-  text-align: center; /* Центрира текста */
-  box-sizing: border-box; /* Включва падинга и бордера в общата ширина */
-  /* margin-top: 40px; */
+  padding: 20px;
+  padding-bottom: 10px;
+  border: 1px solid #cf9359;
+  border-radius: 8px;
+  background-color: #f3f3ee;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  box-sizing: border-box;
   box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -36,7 +35,7 @@
 .image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Изрязване на изображението */
+  object-fit: cover;
   position: absolute;
   top: 50%;
   left: 50%;

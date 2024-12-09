@@ -1,6 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, catchError, tap, throwError } from 'rxjs';
+
 import { ErrorService } from '../shared/error.service';
 import { LoggedUser } from './user.model';
 
