@@ -18,7 +18,7 @@ form {
 
 .content {
   flex: 1;
-  height: 68vh;
+  min-height: 68vh;
 }
 
 .control.no-margin {

@@ -9,3 +9,9 @@ export interface LoggedUser {
   _id: string;
   accessToken: string;
 }
+
+export interface UserForRegistration {
+  username: string;
+  email: string;
+  password: string;
+}
