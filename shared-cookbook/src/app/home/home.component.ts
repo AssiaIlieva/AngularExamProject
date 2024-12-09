@@ -1,7 +1,7 @@
 import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 
 import { RecipeCardComponent } from '../recipes/recipe-card/recipe-card.component';
-import { ApiRecipesService } from '../recipes/api.recipes.service';
+import { ApiRecipesService } from '../recipes/recipes-api.service';
 import { Recipe } from '../recipes/recipe.model';
 import { LoaderComponent } from '../shared/loader/loader.component';
 
