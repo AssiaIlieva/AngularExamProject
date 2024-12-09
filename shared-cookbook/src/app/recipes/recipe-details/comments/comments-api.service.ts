@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
 
 import { ErrorService } from '../../../shared/error.service';
-import { Comment } from './comments.model';
+import { Comment, NewComment } from './comments.model';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +21,10 @@ export class CommentsApiService {
       this.commentsUrl,
       'Something went wrong fetching the comments, please try again later'
     );
+  }
+
+  addComment(newComment: NewComment) {
+    return this.httpClient.post<Comment>(this.commentsUrl, newComment);
   }
 
   private fetchComments(url: string, errorMessage: string) {
