@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Ropa+Sans:ital@0;1&display=swap");
-/* You can add global styles to this file, and also import other style files */
-/*-------------------------------------------------
-GLOBALS CLASSES
--------------------------------------------------*/
+
 * {
   margin: 0;
   padding: 0;
@@ -16,14 +13,17 @@ body {
   padding: 0;
   flex-direction: column;
   font-family: "Ropa Sans", sans-serif;
-}
-body {
-  background: url("/pattern-3.jpg");
-  max-width: 100%;
+  display: flex;
+  background: linear-gradient(to bottom, #e5e2d3, #cf9966);
+  background-size: cover; /* За да покрие целия екран */
+  background-attachment: fixed; /* За да остане фонът неподвижен при скролване */
+  background-position: center center; /* За да се центрира фона */
+  /* background: url("/pattern-3.jpg"); */
 }
 
 .content {
   flex: 1;
+  /* Оставяме съдържанието да запълва наличното пространство */
 }
 
 p {
@@ -48,9 +48,6 @@ ul li {
 img {
   border: none;
 }
-img {
-  border: none;
-}
 h1 {
   font-family: "Ropa Sans", sans-serif;
   font-size: 26px;
@@ -62,14 +59,12 @@ h1 {
 .panel {
   overflow: hidden;
 }
-/* .title {
-} */
+
 .content {
   overflow: hidden;
   font-size: 14px;
 }
-/* .button-link {
-} */
+
 .button-link a {
   font-family: "Ropa Sans", sans-serif;
   text-transform: uppercase;
@@ -82,7 +77,6 @@ h1 {
   border-top: 1px solid #dadacb;
   margin: 14px;
 }
-/* global.css или styles.css */
 .error {
   color: red;
   background-color: #fdd;
@@ -156,7 +150,7 @@ PANEL CLASSES
 }
 
 /*-------------------------------------------------
-SIDEBAR CLASSS
+SIDEBAR CLASSES
 -------------------------------------------------*/
 .search-panel {
   width: 100%;

@@ -1,21 +1,25 @@
+/* Футер */
 footer {
-  display: flex;
-  position: bottom;
-
   background: url("/pattern-1.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  position: relative;
+  margin-top: auto; /* Това осигурява футерът да се движи на долу, когато има малко съдържание */
 }
+
 .footer {
   width: 960px;
-  margin: 0 auto;
-  margin-top: 40px;
+  text-align: center;
+  color: #cf9359;
   padding-top: 10px;
   padding-bottom: 20px;
   overflow: hidden;
 }
 
 .footer p {
-  text-align: center;
-  color: #cf9359;
   margin-bottom: 10px;
 }
 
