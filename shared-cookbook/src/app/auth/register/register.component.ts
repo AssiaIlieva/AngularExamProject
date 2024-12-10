@@ -1,8 +1,8 @@
 import { Component, DestroyRef, inject, signal } from '@angular/core';
 import {
+  AbstractControl,
   FormControl,
   FormGroup,
-  NgForm,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
@@ -10,12 +10,24 @@ import { Router, RouterLink } from '@angular/router';
 
 import { AuthApiService } from '../auth-api.service';
 
+// Валидация за сравняване на две пароли
+function equalValues(controlName1: string, controlName2: string) {
+  return (control: AbstractControl) => {
+    const val1 = control.get(controlName1)?.value;
+    const val2 = control.get(controlName2)?.value;
+    if (val1 === val2) {
+      return null;
+    }
+    return { valuesNotEqual: true }; // Ако паролите не съвпадат, връщаме грешка
+  };
+}
+
 @Component({
   selector: 'app-register',
   standalone: true,
   imports: [RouterLink, ReactiveFormsModule],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css',
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
   private userService = inject(AuthApiService);
@@ -34,9 +46,14 @@ export class RegisterComponent {
       validators: [Validators.required, Validators.minLength(6)],
     }),
     confirmPassword: new FormControl('', {
-      validators: [Validators.required, Validators.minLength(6)],
+      validators: [
+        Validators.required,
+        Validators.minLength(6),
+        equalValues('password', 'confirmPassword'),
+      ],
     }),
   });
+
   get usernamelIsInvalid() {
     return (
       this.form.controls.username.touched &&
@@ -60,12 +77,13 @@ export class RegisterComponent {
       this.form.controls.password.invalid
     );
   }
+
   get confirmPasswordIsInvalid() {
     return (
       this.form.controls.confirmPassword.touched &&
       this.form.controls.confirmPassword.dirty &&
-      this.form.controls.confirmPassword.invalid &&
-      this.form.controls.confirmPassword !== this.form.controls.password
+      (this.form.controls.confirmPassword.invalid ||
+        this.form.controls.confirmPassword.hasError('valuesNotEqual'))
     );
   }
 
