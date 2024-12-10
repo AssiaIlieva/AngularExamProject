@@ -9,7 +9,6 @@ import {
 import { Router, RouterLink } from '@angular/router';
 
 import { AuthApiService } from '../auth-api.service';
-import { UserForAuth, UserForRegistration } from '../user.model';
 
 @Component({
   selector: 'app-register',
@@ -20,7 +19,7 @@ import { UserForAuth, UserForRegistration } from '../user.model';
 })
 export class RegisterComponent {
   private userService = inject(AuthApiService);
-  private onDestroy = inject(DestroyRef);
+  private destroyRef = inject(DestroyRef);
   private router = inject(Router);
   error = signal<string>('');
 
@@ -87,7 +86,7 @@ export class RegisterComponent {
           this.error.set(error.message);
         },
       });
-    this.onDestroy.onDestroy(() => {
+    this.destroyRef.onDestroy(() => {
       subscription.unsubscribe();
     });
   }

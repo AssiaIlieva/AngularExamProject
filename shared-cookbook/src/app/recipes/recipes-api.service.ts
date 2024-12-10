@@ -46,8 +46,24 @@ export class ApiRecipesService {
     );
   }
 
-  createRecipe(data: NewRecipeData) {
-    return this.httpClient.post<Recipe>(this.recipesUrl, data);
+  createRecipe(
+    recipeName: string,
+    recipeType: string,
+    preparationTime: number,
+    imageURL: string,
+    description: string,
+    ingredients: string,
+    instructions: string
+  ) {
+    return this.httpClient.post<Recipe>(this.recipesUrl, {
+      recipeName,
+      recipeType,
+      preparationTime,
+      imageURL,
+      description,
+      ingredients,
+      instructions,
+    });
   }
 
   removeRecipe(recipeId: string) {
