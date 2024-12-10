@@ -9,6 +9,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { UserGuard } from './guards/user.guard';
 import { GuestGuard } from './guards/guest.guard';
 import { OwnerGuard } from './guards/owner.guard';
+import { ProfileComponent } from './auth/profile/profile.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -27,4 +28,5 @@ export const routes: Routes = [
     component: RecipeEditComponent,
     canActivate: [OwnerGuard],
   },
+  { path: 'profile', component: ProfileComponent, canActivate: [UserGuard] },
 ];
