@@ -1,14 +1,14 @@
 import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
 
 import { ApiRecipesService } from './recipes-api.service';
 import { Recipe } from './recipe.model';
 import { LoaderComponent } from '../shared/loader/loader.component';
+import { RecipeCardComponent } from './recipe-card/recipe-card.component';
 
 @Component({
   selector: 'app-recipes',
   standalone: true,
-  imports: [LoaderComponent, RouterLink],
+  imports: [LoaderComponent, RecipeCardComponent],
   templateUrl: './recipes.component.html',
   styleUrl: './recipes.component.css',
 })
