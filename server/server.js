@@ -1453,6 +1453,22 @@
   };
   var seedData = {
     recipes: {
+      '8f46934e-d35f-438e-bf0e-91596c16035b': {
+        _ownerId: '78d8bbbb-31fa-4208-bfd2-5360a62c0d02',
+        recipeName: 'Spaghetty Carbonara',
+        recipeType: 'Main Course',
+        preparationTime: 45,
+        imageURL:
+          'https://anitalianinmykitchen.com/wp-content/uploads/2021/03/carbonara-photo-.jpg',
+        description:
+          'Spaghetti carbonara is a classic Italian pasta dish with a creamy sauce of eggs, cheese, pancetta or bacon, and black pepper.',
+        ingredients:
+          '4 servings spaghetti, 150g pancetta or bacon - diced, 2 large eggs, 50g grated Parmesan cheese, 2 cloves garlic, minced, 2 tablespoons olive oil, salt to taste, freshly ground black pepper to taste',
+        instructions:
+          'Cook the spaghetti according to package instructions. Sauté the pancetta or bacon with garlic in olive oil until crispy. In a bowl, whisk eggs and Parmesan cheese together. Toss the hot spaghetti with the pancetta, then mix in the egg mixture off the heat to create a creamy sauce. Season with salt and pepper.',
+        _createdOn: 1722362834291,
+        _id: '8f46934e-d35f-438e-bf0e-91596c16035b',
+      },
       'b9530fed-3654-438e-b5f9-19fe04aed8f8': {
         _ownerId: '78d8bbbb-31fa-4208-bfd2-5360a62c0d02',
         recipeName: 'Crème Brûlée',
@@ -1533,22 +1549,7 @@
         _createdOn: 1722363576603,
         _id: 'd81e4069-7d31-4743-b59b-0d21bc5059b7',
       },
-      '8f46934e-d35f-438e-bf0e-91596c16035b': {
-        _ownerId: '78d8bbbb-31fa-4208-bfd2-5360a62c0d02',
-        recipeName: 'Spaghetty Carbonara',
-        recipeType: 'Main Course',
-        preparationTime: 45,
-        imageURL:
-          'https://anitalianinmykitchen.com/wp-content/uploads/2021/03/carbonara-photo-.jpg',
-        description:
-          'Spaghetti carbonara is a classic Italian pasta dish with a creamy sauce of eggs, cheese, pancetta or bacon, and black pepper.',
-        ingredients:
-          '4 servings spaghetti, 150g pancetta or bacon - diced, 2 large eggs, 50g grated Parmesan cheese, 2 cloves garlic, minced, 2 tablespoons olive oil, salt to taste, freshly ground black pepper to taste',
-        instructions:
-          'Cook the spaghetti according to package instructions. Sauté the pancetta or bacon with garlic in olive oil until crispy. In a bowl, whisk eggs and Parmesan cheese together. Toss the hot spaghetti with the pancetta, then mix in the egg mixture off the heat to create a creamy sauce. Season with salt and pepper.',
-        _createdOn: 1722362834291,
-        _id: '8f46934e-d35f-438e-bf0e-91596c16035b',
-      },
+
       '5948c5e7-02a8-455f-aeae-2ade057ed4b8': {
         _ownerId: '847ec027-f659-4086-8032-5173e2f9c93a',
         recipeName: 'Bruschetta',
@@ -1565,22 +1566,7 @@
         _createdOn: 1722364429383,
         _id: '5948c5e7-02a8-455f-aeae-2ade057ed4b8',
       },
-      'c2fb0f02-8c03-435d-9709-b121b09bd286': {
-        _ownerId: '78d8bbbb-31fa-4208-bfd2-5360a62c0d02',
-        recipeName: 'Pepper Steak',
-        recipeType: 'Main Course',
-        preparationTime: 50,
-        imageURL:
-          'https://noobcook.com/wp-content/uploads/2012/02/blackpeppersteak.jpg',
-        description:
-          'Pepper steak is a flavorful dish featuring beef steaks seasoned with a mix of crushed black, green, and white peppercorns, then seared to perfection.',
-        ingredients:
-          '4 beef steaks (about 600g), 1 tablespoon black peppercorns - crushed, 1 tablespoon green peppercorns - crushed, 1 tablespoon white peppercorns - crushed, 2 tablespoons butter, 1 tablespoon olive oil, 1 small onion - finely chopped, 2 cloves garlic - finely chopped, 100ml white wine, 200ml beef broth, 100ml heavy cream, salt to taste',
-        instructions:
-          'Season the steaks with crushed peppercorns and sear in butter and olive oil until cooked to the desired doneness. In the same pan, sauté onions and garlic, then deglaze with white wine, add beef broth and cream, simmer until thickened, and serve over the steaks',
-        _createdOn: 1722360256747,
-        _id: 'c2fb0f02-8c03-435d-9709-b121b09bd286',
-      },
+
       '59c16686-08b2-4b45-8a8a-0ccf702e1056': {
         _ownerId: '35c62d76-8152-4626-8712-eeb96381bea8',
         recipeName: 'Tiramisu',
@@ -1594,8 +1580,24 @@
           '1 packet ladyfingers, 500g mascarpone, 3 eggs, 3 table spoons sugar, 500ml strong coffee, 50ml marsala',
         instructions:
           'Brew and cool the coffee, then mix in the marsala. Separate the eggs and beat the yolks with sugar until creamy; fold in mascarpone until smooth. Whip the egg whites until stiff and gently fold into the mascarpone mixture. Dip ladyfingers briefly in the coffee mixture, then layer them in a dish. Spread half of the mascarpone mixture over the ladyfingers, then repeat layers. Chill for at least 4 hours, and dust with cocoa powder before serving.',
-        _createdOn: 1722357112637,
+        _createdOn: 1733597017657,
         _id: '59c16686-08b2-4b45-8a8a-0ccf702e1056',
+      },
+      'c2fb0f02-8c03-435d-9709-b121b09bd286': {
+        _ownerId: '78d8bbbb-31fa-4208-bfd2-5360a62c0d02',
+        recipeName: 'Pepper Steak',
+        recipeType: 'Main Course',
+        preparationTime: 50,
+        imageURL:
+          'https://img.freepik.com/free-photo/juicy-steak-medium-rare-beef-with-spices_2829-5642.jpg?uid=R106433200&ga=GA1.1.394476995.1723047083&semt=ais_hybrid',
+        description:
+          'Pepper steak is a flavorful dish featuring beef steaks seasoned with a mix of crushed black, green, and white peppercorns, then seared to perfection.',
+        ingredients:
+          '4 beef steaks (about 600g), 1 tablespoon black peppercorns - crushed, 1 tablespoon green peppercorns - crushed, 1 tablespoon white peppercorns - crushed, 2 tablespoons butter, 1 tablespoon olive oil, 1 small onion - finely chopped, 2 cloves garlic - finely chopped, 100ml white wine, 200ml beef broth, 100ml heavy cream, salt to taste',
+        instructions:
+          'Season the steaks with crushed peppercorns and sear in butter and olive oil until cooked to the desired doneness. In the same pan, sauté onions and garlic, then deglaze with white wine, add beef broth and cream, simmer until thickened, and serve over the steaks',
+        _createdOn: 1733683417657,
+        _id: 'c2fb0f02-8c03-435d-9709-b121b09bd286',
       },
       '0b1a8593-a87f-46d1-b0c2-17eaec95afec': {
         _ownerId: '9409e503-74c2-4d99-8004-eaf23dc7005e',
@@ -1629,6 +1631,22 @@
         _ownerId: '26241f0b-ac41-49cb-99d9-80ee77284678',
         _updatedOn: 1733817159183,
         _id: '8cbeb771-d0c3-4e1e-a84a-079874c99fef',
+      },
+      'ccc36827-b03e-4921-a12f-c1c227bd13b1': {
+        _ownerId: '78d8bbbb-31fa-4208-bfd2-5360a62c0d02',
+        recipeName: 'Tzatziki',
+        recipeType: 'Appetizer',
+        preparationTime: 30,
+        imageURL:
+          'https://img.freepik.com/free-photo/traditional-mixed-soup-ovdukh-plain-youghurt-cucumber-spring-onions-dill-basil-egg-beef-garlic-top-view_141793-3252.jpg?uid=R106433200&ga=GA1.1.394476995.1723047083&semt=ais_hybrid',
+        description:
+          ' A refreshing Greek yogurt dip with cucumber, garlic, and herbs.',
+        ingredients:
+          '1 cup Greek yogurt, 1 cucumber, grated and drained, 2 cloves garlic, minced, 1 tbsp olive oil, 1 tbsp fresh dill, chopped, 1 tbsp lemon juice, Salt and pepper to taste.',
+        instructions:
+          '1. In a bowl, combine the Greek yogurt, grated cucumber, minced garlic, olive oil, dill, and lemon juice. \n2. Mix until smooth and season with salt and pepper to taste. \n3. Chill in the fridge for at least 30 minutes before serving. \n4. Serve as a dip with pita bread or fresh vegetables.',
+        _createdOn: 1733823973185,
+        _id: 'ccc36827-b03e-4921-a12f-c1c227bd13b1',
       },
     },
     comments: {
