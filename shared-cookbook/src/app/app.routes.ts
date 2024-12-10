@@ -6,14 +6,25 @@ import { RecipeCreateComponent } from './recipes/recipe-create/recipe-create.com
 import { RecipeDetailsComponent } from './recipes/recipe-details/recipe-details.component';
 import { HomeComponent } from './home/home.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { UserGuard } from './guards/user.guard';
+import { GuestGuard } from './guards/guest.guard';
+import { OwnerGuard } from './guards/owner.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canActivate: [GuestGuard] },
   { path: 'recipes', component: RecipesComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'recipe-create', component: RecipeCreateComponent },
+  { path: 'register', component: RegisterComponent, canActivate: [GuestGuard] },
+  {
+    path: 'recipe-create',
+    component: RecipeCreateComponent,
+    canActivate: [UserGuard],
+  },
   { path: 'recipe/:recipeId', component: RecipeDetailsComponent },
-  { path: 'recipe-edit/:recipeId', component: RecipeEditComponent },
+  {
+    path: 'recipe-edit/:recipeId',
+    component: RecipeEditComponent,
+    canActivate: [OwnerGuard],
+  },
 ];
