@@ -2,15 +2,6 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#d0d6d9, #b1b4ba);
-  color: #d9e2f1;
-  min-height: 100vh;
-}
-
 form {
   width: 80%;
   max-width: 40rem;
@@ -75,26 +66,6 @@ fieldset {
   color: #142020;
 }
 
-.control:has(input[type="checkbox"]) {
-  display: flex;
-  align-items: center;
-}
-
-.control:has(input[type="checkbox"]) label {
-  margin: 0;
-}
-
-.control input[type="checkbox"] {
-  display: inline-block;
-  width: auto;
-  max-width: none;
-  margin-right: 0.5rem;
-  border-radius: 0;
-  border: none;
-  background-color: transparent;
-  color: #d9e2f1;
-}
-
 .control-error {
   display: flex;
   flex-wrap: wrap;
@@ -157,7 +128,7 @@ fieldset {
 
 [formgroupname].ng-invalid.ng-touched.ng-dirty label,
 .control:has(.ng-invalid.ng-touched.ng-dirty) label {
-  color: #f98b75;
+  color: #cf2a0a;
 }
 
 [formgroupname].ng-invalid.ng-touched.ng-dirty input,

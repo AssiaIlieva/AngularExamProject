@@ -95,7 +95,7 @@ form {
 }
 
 .control:has(.ng-invalid.ng-touched.ng-dirty) label {
-  color: #f98b75;
+  color: #cf2a0a;
 }
 
 input.ng-invalid.ng-touched.ng-dirty {
