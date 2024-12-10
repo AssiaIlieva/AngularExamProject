@@ -1,80 +1,55 @@
 header {
   display: flex;
-  align-content: space-around;
+  justify-content: center;
   background: url("/pattern-1.jpg");
 }
 .header {
   max-width: 1600px;
-  max-height: 200px;
-  margin: 0 auto;
-  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
-.header-left-panel {
-  width: 700px;
-  max-height: 150px;
-  float: left;
+.header-left-panel,
+.header-right-panel {
+  display: flex;
+  align-items: center;
 }
 .logo-wrap {
-  width: 400px;
-  float: left;
   background: #f3f3ee;
-  overflow: hidden;
-}
-.logo {
-  width: 500px;
-  float: left;
-  margin-left: 20px;
-  margin-top: 40px;
+  padding: 10px;
+  border-radius: 5px;
 }
 .logo h2 {
   font-family: "Ropa Sans", sans-serif;
-  font-size: 22px;
+  font-size: 18px;
   color: #cf9359;
   text-transform: uppercase;
-  font-weight: normal;
-  padding-bottom: 20px;
+  margin: 0;
 }
 .logo h1 {
   color: #50453b;
-  font-size: 42px;
-  padding-bottom: 30px;
-}
-.header-right-panel {
-  width: 500px;
-  float: right;
-  overflow: hidden;
-  margin-top: 20px;
-}
-.header-right-panel-top {
-  width: 300px;
-  float: left;
-  padding-left: 15px;
+  font-size: 28px;
+  margin: 0;
 }
 .header-right-panel p {
   color: #cf9359;
-  float: left;
-  font-size: 20px;
-  text-transform: capitalize;
-  text-align: right;
-  font-weight: normal;
+  font-size: 16px;
+  margin-right: 20px;
 }
-
-.menu {
-  width: 500px;
-  float: left;
-  margin-top: 20px;
+.menu ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .menu ul li {
-  float: left;
-  padding-bottom: 20px;
-  width: 120px;
-  padding-left: 15px;
+  margin-right: 10px;
 }
 .menu ul li a {
   display: block;
-  width: 110px;
-  height: 40px;
-  line-height: 40px;
+  padding: 10px 15px;
   background: #414141;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 14px;
@@ -83,12 +58,41 @@ header {
   text-align: center;
   text-transform: uppercase;
   border-radius: 3px;
+  text-decoration: none;
 }
-.menu ul li a:hover {
-  background: #cf9359;
-  color: #282828;
-}
+.menu ul li a:hover,
 .menu ul li a.active {
   background: #cf9359;
   color: #282828;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .header-left-panel,
+  .header-right-panel {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .menu ul {
+    flex-direction: column;
+  }
+  .menu ul li {
+    margin: 5px 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo h2 {
+    font-size: 14px;
+  }
+  .logo h1 {
+    font-size: 22px;
+  }
+  .menu ul li a {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
 }
