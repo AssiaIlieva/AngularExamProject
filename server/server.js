@@ -1597,6 +1597,39 @@
         _createdOn: 1722357112637,
         _id: '59c16686-08b2-4b45-8a8a-0ccf702e1056',
       },
+      '0b1a8593-a87f-46d1-b0c2-17eaec95afec': {
+        _ownerId: '9409e503-74c2-4d99-8004-eaf23dc7005e',
+        recipeName: 'French Soup',
+        recipeType: 'Soup',
+        preparationTime: 50,
+        imageURL:
+          'https://img.freepik.com/free-photo/delicious-melted-cheese-snacks_23-2149274868.jpg?uid=R106433200&ga=GA1.1.394476995.1723047083&semt=ais_hybrid',
+        description:
+          'A comforting and flavorful French soup, combining caramelized onions, rich broth, and a hint of wine, topped with crusty bread and melted cheese for a perfect balance of textures and tastes',
+        ingredients:
+          'Onions,  Butter,  Olive oil, Beef or vegetable broth,  White wine (optional), Thyme, Bay leaf, Salt and pepper, French baguette, Gruyère or Swiss cheese',
+        instructions:
+          'Sauté sliced onions in butter and olive oil until golden. Add broth, wine (optional), thyme, and bay leaf. Simmer for 20-30 minutes. Season with salt and pepper to taste. Toast baguette slices and top with grated cheese. Pour soup into bowls, place a toast on top, and broil until cheese is melted.Bon appétit!',
+        _createdOn: 1733769817657,
+        _id: '0b1a8593-a87f-46d1-b0c2-17eaec95afec',
+      },
+      '8cbeb771-d0c3-4e1e-a84a-079874c99fef': {
+        recipeName: 'Raspberry Cheesecake',
+        recipeType: 'Dessert',
+        preparationTime: 80,
+        imageURL:
+          'https://img.freepik.com/free-photo/front-close-view-delicious-pancakes-with-fresh-raspberries-light-table_140725-130937.jpg?uid=R106433200&ga=GA1.1.394476995.1723047083&semt=ais_hybrid',
+        description:
+          'A creamy and tangy cheesecake with a fresh raspberry swirl',
+        ingredients:
+          '200g digestive biscuits, 100g melted butter, 400g cream cheese, 200ml sour cream, 100g powdered sugar, 1 tsp vanilla extract, 150g fresh raspberries, 50g sugar',
+        instructions:
+          'Crush the biscuits and mix with melted butter, press into the base of a pan. Blend cream cheese, sour cream, powdered sugar, and vanilla until smooth. Spread the mixture over the biscuit base. Blend raspberries and sugar, swirl into the cheesecake mixture. Chill for 4 hours before serving. Enjoy!',
+        _createdOn: 1733817037881,
+        _ownerId: '26241f0b-ac41-49cb-99d9-80ee77284678',
+        _updatedOn: 1733817159183,
+        _id: '8cbeb771-d0c3-4e1e-a84a-079874c99fef',
+      },
     },
     comments: {
       '8cc65b8f-9273-4558-a6b0-251b48a7202f': {
