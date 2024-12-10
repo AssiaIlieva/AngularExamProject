@@ -23,18 +23,22 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.isFetching.set(true);
 
-    const subscription = this.apiService.getLast4Recipes().subscribe({
-      next: (recipes) => {
-        this.recipes.set(recipes);
-      },
-      error: (error: Error) => {
-        console.log(error);
-        this.error.set(error.message);
-      },
-      complete: () => {
-        this.isFetching.set(false);
-      },
-    });
+    const subscription = this.apiService
+      .getLast4Recipes(
+        'Something went wrong fetching the recipes, please try again later'
+      )
+      .subscribe({
+        next: (recipes) => {
+          this.recipes.set(recipes);
+        },
+        error: (error: Error) => {
+          console.log(error);
+          this.error.set(error.message);
+        },
+        complete: () => {
+          this.isFetching.set(false);
+        },
+      });
     this.destroyRef.onDestroy(() => {
       subscription.unsubscribe();
     });

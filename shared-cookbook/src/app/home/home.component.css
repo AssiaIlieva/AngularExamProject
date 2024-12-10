@@ -19,9 +19,10 @@
   justify-content: space-between;
   padding: 1rem;
   color: #f3f3ee;
-  min-height: 50vh;
+  max-height: 40vh;
   text-align: center;
   box-sizing: border-box;
+  margin-top: 30px;
 }
 
 .hero-content {
@@ -78,7 +79,6 @@ h3 {
   min-height: 68vh;
   max-width: 1560px;
   margin: 0 auto;
-  padding-bottom: 60px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
