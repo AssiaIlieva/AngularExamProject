@@ -1,8 +1,8 @@
 import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 
 import { Recipe } from '../../recipes/recipe.model';
-import { LoggedUser } from '../user.model'; // Импортиране на типа за потребител
-import { AuthApiService } from '../auth-api.service'; // Импортиране на сървиса за потребителя
+import { LoggedUser } from '../user.model'; 
+import { AuthApiService } from '../auth-api.service';
 import { ApiRecipesService } from '../../recipes/recipes-api.service';
 import { RecipeCardComponent } from '../../recipes/recipe-card/recipe-card.component';
 import { LoaderComponent } from '../../shared/loader/loader.component';
@@ -18,7 +18,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ProfileComponent implements OnInit {
   private apiService = inject(ApiRecipesService);
-  private userService = inject(AuthApiService); // Използване на UserService за получаване на потребителя
+  private userService = inject(AuthApiService);
   private destroyRef = inject(DestroyRef);
   private authService = inject(AuthApiService);
 
@@ -33,7 +33,7 @@ export class ProfileComponent implements OnInit {
     const user = this.userService.getLoggedUserFromStorage();
     if (user) {
       this.isFetching.set(true);
-      const userId = user._id; // Вземете userId от логнатия потребител
+      const userId = user._id;
 
       const subscription = this.apiService
         .getRecipesByUserId(userId, 'Failed to fetch your recipes')

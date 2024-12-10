@@ -9,7 +9,7 @@ footer {
   position: relative;
   text-align: center;
   color: #cf9359;
-  margin-top: auto; /* Това осигурява футерът да се движи на долу, когато има малко съдържание */
+  margin-top: auto;
 }
 
 .footer {

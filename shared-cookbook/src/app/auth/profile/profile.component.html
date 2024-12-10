@@ -3,7 +3,6 @@
     <div class="hero-content">
       <h1 *ngIf="user$ | async as user">Welcome {{ user.username }}</h1>
 
-      <!-- Показване на потребителското име -->
       <div class="hero-image">
         <img src="profile_img.png" alt="Profile Image" />
       </div>
@@ -12,23 +11,13 @@
   </section>
 
   <div class="recipes-wrapper">
-    <!-- Лоудер, докато се фечват данни -->
     @if(isFetching() && !error()) {
     <app-loader />
-    }
-
-    <!-- Грешка при фечване -->
-    @if(error()) {
+    } @if(error()) {
     <p class="error-text">{{ error() }}</p>
-    }
-
-    <!-- Ако няма рецепти -->
-    @if(recipes().length === 0) {
+    } @if(recipes().length === 0) {
     <p class="fallback-text">You have no recipes shared yet.</p>
-    }
-
-    <!-- Ако има рецепти -->
-    @if(recipes().length > 0) {
+    } @if(recipes().length > 0) {
     <ul class="cards-container">
       @for (recipe of recipes(); track recipe._id) {
       <app-recipe-card [recipe]="recipe" />
