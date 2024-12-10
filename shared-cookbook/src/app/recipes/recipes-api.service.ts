@@ -90,6 +90,14 @@ export class ApiRecipesService {
     return this.httpClient.put<Recipe>(url, data);
   }
 
+  getRecipesByType(type: string) {
+    let url = this.recipesUrl;
+    if (type) {
+      url += `?where=recipeType%3D%22${type}%22`;
+    }
+    return this.fetchRecipes(url, 'Error fetching recipes by type');
+  }
+
   getRecipesByUserId(userId: string, errorMessage: string) {
     const url = `${this.recipesUrl}?where=_ownerId%3D"${userId}"&sortBy=_createdOn%20desc`;
     return this.httpClient.get<Recipe[]>(url).pipe(
