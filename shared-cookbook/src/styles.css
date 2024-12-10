@@ -149,38 +149,6 @@ PANEL CLASSES
   padding-left: 20px;
 }
 
-/*-------------------------------------------------
-SIDEBAR CLASSES
--------------------------------------------------*/
-.search-panel {
-  width: 100%;
-  background: #f3f3ee;
-  overflow: hidden;
-}
-.search-panel .content {
-  width: 260px;
-  margin: 0 auto;
-  margin-top: 30px;
-  padding-bottom: 30px;
-}
-.search-panel .content h2 {
-  font-size: 14px;
-  color: #cf9359;
-  padding-top: 20px;
-  font-weight: normal;
-  padding-bottom: 10px;
-}
-.search-panel .title h1 {
-  color: #50453b;
-  font-weight: normal;
-}
-.search-panel .border {
-  border-bottom: 1px solid #dadacb;
-  margin-top: 15px;
-}
-.search-panel .searchbox {
-  width: 100%;
-}
 .search-panel .input {
   width: 200px;
   height: 40px;
