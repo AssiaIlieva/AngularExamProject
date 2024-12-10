@@ -5,6 +5,7 @@
   padding: 0;
   font-family: "Ropa Sans", sans-serif;
 }
+
 html,
 body {
   height: 100%;
@@ -12,18 +13,17 @@ body {
   margin: 0;
   padding: 0;
   flex-direction: column;
+  justify-content: space-between;
   font-family: "Ropa Sans", sans-serif;
   display: flex;
   background: linear-gradient(to bottom, #e5e2d3, #cf9966);
-  background-size: cover; /* За да покрие целия екран */
-  background-attachment: fixed; /* За да остане фонът неподвижен при скролване */
-  background-position: center center; /* За да се центрира фона */
-  /* background: url("/pattern-3.jpg"); */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
 }
 
 .content {
   flex: 1;
-  /* Оставяме съдържанието да запълва наличното пространство */
 }
 
 p {
