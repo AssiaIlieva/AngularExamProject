@@ -89,4 +89,15 @@ export class ApiRecipesService {
     const url: string = `${this.recipesUrl}/${recipeId}`;
     return this.httpClient.put<Recipe>(url, data);
   }
+
+  getRecipesByUserId(userId: string, errorMessage: string) {
+    const url = `${this.recipesUrl}?where=_ownerId%3D"${userId}"&sortBy=_createdOn%20desc`;
+    return this.httpClient.get<Recipe[]>(url).pipe(
+      catchError((error: HttpErrorResponse) => {
+        this.errorService.showError(errorMessage);
+        console.error(error);
+        return throwError(() => new Error(errorMessage));
+      })
+    );
+  }
 }
