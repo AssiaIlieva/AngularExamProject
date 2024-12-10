@@ -72,7 +72,10 @@ export class RecipeDetailsComponent implements OnInit {
     this.isFetching.set(true);
 
     const recipeSubscription = this.apiService
-      .getOneRecipe(this.recipeId())
+      .getOneRecipe(
+        this.recipeId(),
+        'Something went wrong fetching the recipe, please try again later'
+      )
       .subscribe({
         next: (recipe) => {
           this.recipe.set(recipe);

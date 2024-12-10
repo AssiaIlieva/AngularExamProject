@@ -24,15 +24,29 @@ export class ApiRecipesService {
     );
   }
 
-  getLast4Recipes() {
-    return this.httpClient.get<Recipe[]>(
-      `${this.recipesUrl}${this.last4QuaryUrl}`
-    );
+  getLast4Recipes(errorMessage: string) {
+    return this.httpClient
+      .get<Recipe[]>(`${this.recipesUrl}${this.last4QuaryUrl}`)
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          this.errorService.showError(errorMessage);
+          console.log(error);
+
+          return throwError(() => new Error(errorMessage));
+        })
+      );
   }
 
-  getOneRecipe(recipeId: string) {
+  getOneRecipe(recipeId: string, errorMessage: string) {
     const url: string = `${this.recipesUrl}/${recipeId}`;
-    return this.httpClient.get<Recipe>(url);
+    return this.httpClient.get<Recipe>(url).pipe(
+      catchError((error: HttpErrorResponse) => {
+        this.errorService.showError(errorMessage);
+        console.log(error);
+
+        return throwError(() => new Error(errorMessage));
+      })
+    );
   }
 
   private fetchRecipes(url: string, errorMessage: string) {

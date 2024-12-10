@@ -101,18 +101,23 @@ export class RecipeEditComponent implements OnInit {
 
   ngOnInit() {
     this.recipeId = this.route.snapshot.paramMap.get('recipeId')!;
-    this.apiService.getOneRecipe(this.recipeId).subscribe({
-      next: (recipe) => {
-        console.log(recipe);
-        this.form.patchValue(recipe);
-      },
-      error: (err) => {
-        this.error.set(
-          'Could not fetch recipe details. Please try again later.'
-        );
-        console.error(err);
-      },
-    });
+    this.apiService
+      .getOneRecipe(
+        this.recipeId,
+        'Something went wrong fetching the recipe, please try again later'
+      )
+      .subscribe({
+        next: (recipe) => {
+          console.log(recipe);
+          this.form.patchValue(recipe);
+        },
+        error: (err) => {
+          this.error.set(
+            'Could not fetch recipe details. Please try again later.'
+          );
+          console.error(err);
+        },
+      });
   }
 
   onSubmit() {
