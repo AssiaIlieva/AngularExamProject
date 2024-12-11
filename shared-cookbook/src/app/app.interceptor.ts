@@ -25,8 +25,6 @@ export const appInterceptor: HttpInterceptorFn = (req, next) => {
     }
   }
 
-  console.log(req);
-
   return next(req).pipe(
     catchError((error: HttpErrorResponse) => {
       if (error.status === 403) {

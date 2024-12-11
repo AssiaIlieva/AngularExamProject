@@ -22,7 +22,7 @@ Shared Cookbook - the SoftUni Angular Oct 2024 course exam project
     - [🍲 Recipes Page](#-recipes-page)
     - [📋 Recipe Details Page](#-recipe-details-page)
     - [💡 Create Recipe Page](#-create-recipe-page)
-    - [�‍🦱 Profile Page](#-profile-page)
+    - [👨‍🦱 Profile Page](#-profile-page)
     - [📝 Register Page](#-register-page)
     - [📝 Login Page](#-login-page)
   - [📜 License](#-license)
@@ -84,8 +84,15 @@ node server.js
 
 ## 🌐 Visit the App
 
-Open your browser and go to the following URL to access the application:
-http://localhost:4200/
+You can access the application online at the following URL:
+https://cookbook-spa-angular.onrender.com/
+
+If you prefer to run the application locally, follow these steps:
+
+Local Access
+
+1. Open your browser and go to the following URL:
+   http://localhost:4200/
 
 ## 💡 Usage
 
