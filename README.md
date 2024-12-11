@@ -116,7 +116,7 @@ http://localhost:4200/
 
 Here's a screenshot of the Home Page:
 
-![Home Page](https://github.com/AssiaIlieva/AngularExamProject/blob/main/shared-cookbook/public/home_page.JPG)
+![Home Page](https://raw.githubusercontent.com/AssiaIlieva/AngularExamProject/blob/main/shared-cookbook/public/home_page.JPG)
 
 ### 🍲 Recipes Page
 
@@ -152,7 +152,7 @@ Here's a screenshot of the Register Page:
 
 Here's a screenshot of the Login Page:
 
-![Tips Details Page](https://github.com/AssiaIlieva/AngularExamProject/blob/main/shared-cookbook/public/login_page.JPG)
+![Login Page](https://github.com/AssiaIlieva/AngularExamProject/blob/main/shared-cookbook/public/login_page.JPG)
 
 ## 📜 License
 
