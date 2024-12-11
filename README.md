@@ -116,7 +116,7 @@ http://localhost:4200/
 
 Here's a screenshot of the Home Page:
 
-![Home Page](https://raw.githubusercontent.com/AssiaIlieva/AngularExamProject/blob/main/shared-cookbook/public/home_page.JPG)
+![Home Page](https://github.com/AssiaIlieva/AngularExamProject/blob/main/shared-cookbook/public/home_page.JPG)
 
 ### 🍲 Recipes Page
 
