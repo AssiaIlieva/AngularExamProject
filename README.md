@@ -22,7 +22,7 @@ Shared Cookbook - the SoftUni Angular Oct 2024 course exam project
     - [🍲 Recipes Page](#-recipes-page)
     - [📋 Recipe Details Page](#-recipe-details-page)
     - [💡 Create Recipe Page](#-create-recipe-page)
-    - [📝 Profile Page](#-profile-page)
+    - [�‍🦱 Profile Page](#-profile-page)
     - [📝 Register Page](#-register-page)
     - [📝 Login Page](#-login-page)
   - [📜 License](#-license)
@@ -136,7 +136,7 @@ Here's a screenshot of the Create Recipe Page:
 
 ![Create Recipe Page](https://github.com/AssiaIlieva/AngularExamProject/blob/main/shared-cookbook/public/create_recipe_page.JPG)
 
-### 📝 Profile Page
+### 👨‍🦱 Profile Page
 
 Here's a screenshot of the Profile Page:
 

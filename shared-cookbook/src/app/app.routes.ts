@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+
 import { LoginComponent } from './auth/login/login.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { RegisterComponent } from './auth/register/register.component';
@@ -10,6 +11,7 @@ import { UserGuard } from './guards/user.guard';
 import { GuestGuard } from './guards/guest.guard';
 import { OwnerGuard } from './guards/owner.guard';
 import { ProfileComponent } from './auth/profile/profile.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -29,4 +31,5 @@ export const routes: Routes = [
     canActivate: [OwnerGuard],
   },
   { path: 'profile', component: ProfileComponent, canActivate: [UserGuard] },
+  { path: '**', component: NotFoundComponent },
 ];
