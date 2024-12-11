@@ -83,6 +83,10 @@ p {
   margin: 10px auto;
   padding-bottom: 60px;
 }
+.back-buttonContainer a {
+  border: 0.5px solid #7c7979;
+  box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.5);
+}
 
 .button {
   padding: 8px 15px;
