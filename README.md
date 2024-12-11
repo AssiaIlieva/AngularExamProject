@@ -21,8 +21,10 @@ Shared Cookbook - the SoftUni Angular Oct 2024 course exam project
     - [🏠 Home Page](#-home-page)
     - [🍲 Recipes Page](#-recipes-page)
     - [📋 Recipe Details Page](#-recipe-details-page)
-    - [💡 Tips Page](#-tips-page)
-    - [📝 Tips Details Page](#-tips-details-page)
+    - [💡 Create Recipe Page](#-create-recipe-page)
+    - [📝 Profile Page](#-profile-page)
+    - [📝 Register Page](#-register-page)
+    - [📝 Login Page](#-login-page)
   - [📜 License](#-license)
 
 ## 📖 Overview
@@ -114,31 +116,43 @@ http://localhost:4200/
 
 Here's a screenshot of the Home Page:
 
-![Home Page](https://github.com/AssiaIlieva/Shared-Cookbook/blob/main/client/public/images/home-page.PNG)
+![Home Page](https://github.com/AssiaIlieva/AngularExamProject/blob/main/shared-cookbook/public/home_page.JPG)
 
 ### 🍲 Recipes Page
 
 Here's a screenshot of the Recipes Page:
 
-![Recipes Page](https://github.com/AssiaIlieva/Shared-Cookbook/blob/main/client/public/images/recipes-page.PNG)
+![Recipes Page](https://github.com/AssiaIlieva/AngularExamProject/blob/main/shared-cookbook/public/catalogue_page.JPG)
 
 ### 📋 Recipe Details Page
 
 Here's a screenshot of the Recipe Details Page:
 
-![Recipe Details Page](https://github.com/AssiaIlieva/Shared-Cookbook/blob/main/client/public/images/recipes-details-page.PNG)
+![Recipe Details Page](https://github.com/AssiaIlieva/AngularExamProject/blob/main/shared-cookbook/public/recipe-details_page.JPG)
 
-### 💡 Tips Page
+### 💡 Create Recipe Page
 
-Here's a screenshot of the Tips Page:
+Here's a screenshot of the Create Recipe Page:
 
-![Tips Page](https://github.com/AssiaIlieva/Shared-Cookbook/blob/main/client/public/images/tips-page.PNG)
+![Create Recipe Page](https://github.com/AssiaIlieva/AngularExamProject/blob/main/shared-cookbook/public/create_recipe_page.JPG)
 
-### 📝 Tips Details Page
+### 📝 Profile Page
 
-Here's a screenshot of the Tips Details Page:
+Here's a screenshot of the Profile Page:
 
-![Tips Details Page](https://github.com/AssiaIlieva/Shared-Cookbook/blob/main/client/public/images/tips-details-page.PNG)
+![Profile Page](https://github.com/AssiaIlieva/AngularExamProject/blob/main/shared-cookbook/public/profile_page.JPG)
+
+### 📝 Register Page
+
+Here's a screenshot of the Register Page:
+
+![Register Page](https://github.com/AssiaIlieva/AngularExamProject/blob/main/shared-cookbook/public/register_page.JPG)
+
+### 📝 Login Page
+
+Here's a screenshot of the Login Page:
+
+![Tips Details Page](https://github.com/AssiaIlieva/AngularExamProject/blob/main/shared-cookbook/public/login_page.JPG)
 
 ## 📜 License
 
