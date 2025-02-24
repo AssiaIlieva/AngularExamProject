@@ -10,7 +10,7 @@ import { Router, RouterLink } from '@angular/router';
 
 import { AuthApiService } from '../auth-api.service';
 
-// Валидация за сравняване на две пароли
+
 function equalValues(controlName1: string, controlName2: string) {
   return (control: AbstractControl) => {
     const val1 = control.get(controlName1)?.value;
@@ -18,7 +18,7 @@ function equalValues(controlName1: string, controlName2: string) {
     if (val1 === val2) {
       return null;
     }
-    return { valuesNotEqual: true }; // Ако паролите не съвпадат, връщаме грешка
+    return { valuesNotEqual: true };
   };
 }
 
